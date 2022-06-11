@@ -1,0 +1,16 @@
+@import 'styles/text.scss';
+@import 'styles/buttons.scss';
+@import 'styles/global.scss';
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #010522;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}

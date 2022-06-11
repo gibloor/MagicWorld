@@ -1,0 +1,17 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  // flex-wrap: wrap;
+  // overflow: hidden;
+
+  &__page_case {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__page {
+    padding: 0px 20px;
+  }
+}

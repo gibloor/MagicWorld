@@ -1,0 +1,23 @@
+.header {
+  width: 100%;
+  height: 80px;
+  border-bottom: 0.1px solid azure;
+  display: flex;
+
+  &__logo_case {
+    height: 100%;
+    padding: 0px 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 60%;
+  }
+  &__right-side {
+    display: flex;
+    margin-right: 30px;
+    margin-left: auto;
+    height: 100%;
+  }
+}

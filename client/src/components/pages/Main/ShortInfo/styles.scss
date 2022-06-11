@@ -1,0 +1,24 @@
+$locationWidth: 1000px;
+$locationHeight: 500px;
+
+.short-info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__case {
+    width: $locationWidth;
+    height: $locationHeight;
+  }
+
+  &__location_block {
+    width: $locationWidth;
+    height: $locationHeight;
+    position: absolute;
+  }
+
+  &__location {
+    width: 100%;
+    height: 100%;
+  }
+}
