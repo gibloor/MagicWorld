@@ -1,24 +1,64 @@
-$locationWidth: 1000px;
-$locationHeight: 500px;
+$locationWidth: 1200px;
+$locationHeight: 600px;
 
 .short-info {
   width: 100%;
+  height: $locationHeight;
   display: flex;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
 
-  &__case {
-    width: $locationWidth;
-    height: $locationHeight;
+  &__location_hiding {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 1800px;
+    height: 1800px;
+    overflow: hidden;
+    z-index: 1;
+    transform-origin: center;
+    top: -100%;
   }
 
-  &__location_block {
+  &__location_new {
+    display: flex;
+    z-index: 2;
+  }
+  &__location_old {
+    display: flex;
+    z-index: 3;
+    animation: hideMove forwards linear 1.5s;
+  }
+
+  &__location_picture {
     width: $locationWidth;
     height: $locationHeight;
     position: absolute;
+    z-index: -1;
+    transform: rotate(-45deg);
   }
 
-  &__location {
-    width: 100%;
-    height: 100%;
+  &__location_picture_old {
+    animation: hideHold forwards linear 1.5s;
+  }
+}
+
+@keyframes hideMove {
+  0% {
+    
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+@keyframes hideHold {
+  0% {
+  }
+  100% {
+    transform: rotate(-45deg) translateX(-150%) translateY(-300%);
   }
 }

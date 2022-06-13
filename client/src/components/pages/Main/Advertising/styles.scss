@@ -1,0 +1,77 @@
+$width: 1200px;
+$height: 600px;
+
+.advertising {
+  width: 100%;
+  height: $height;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: center;
+
+  &__case {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+  }
+
+  &__room {
+    width: $width;
+    height: $height;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__cost {
+    width: calc(30px * 10);
+    height: 70%;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+
+  &__gold_floor {
+    height: 40px;
+    position: relative;
+  }
+
+  &__gold {
+    width: 60px;
+    height: 40px;
+    animation: goldDrop 0.5s forwards;
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__gold_hide {
+    animation: goldDrop 0.5s forwards, goldHide 0.5s forwards;
+  }
+
+  &__product {
+    width: 400px;
+  }
+}
+
+@keyframes goldDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes goldHide {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+}

@@ -13,7 +13,6 @@ const ShortInfo = () => {
   ];
 
   const [locationNum, setLocationNum] = useState(0);
-  // const [heroNum, setHeroNum] = useState(0);
 
   useEffect(() => {
     let newNum: number
@@ -31,32 +30,26 @@ const ShortInfo = () => {
     return () => clearTimeout(locationTimer)
   }, [locationNum]);
 
-  // useEffect (() => {
-  //   const heroTimer = setTimeout(() => {
-  //     setHeroNum(heroNum + 1)
-  //   }, 4000);
-
-  //   return () => clearTimeout(heroTimer);
-  // }, [heroNum]);
-
   return (
     <div className='short-info'>
-      <div className='short-info__case'>
-        {locations.map((location, index) => (
-          <div
-            key={location}
+      {locations.map((location, index) => (
+        <div
+          key={location}
+          className={classNames(
+            {'short-info__location_hiding': true},
+            {'short-info__location_new': index === locationNum},
+            {'short-info__location_old': index === locationNum - 1 || (locationNum === 0 && index === locations.length - 1)},
+          )}
+        >
+          <img
             className={classNames(
-              {'short-info__location_block': true},
-              {'hide': index !== locationNum},
+              {'short-info__location_picture': true},
+              {'short-info__location_picture_old': index === locationNum - 1 || (locationNum === 0 && index === locations.length - 1)},
             )}
-          >
-            <img 
-              className='short-info__location'
-              src={`assets/gameContent/locations/${location}.jpg`}
-            />
-          </div>
-        ))}
-      </div>
+            src={`assets/gameContent/locations/${location}.jpg`}
+          />
+        </div>
+      ))}
     </div>
   )
 }
