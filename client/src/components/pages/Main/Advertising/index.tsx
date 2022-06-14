@@ -10,38 +10,32 @@ const Advertising = () => {
 
   const [cost, setCost] = useState<number[][]>([[]]);
   const [actualDonat, setActualDonat] = useState(0);
-  const [actualCost, setActualCost] = useState(0);
+  const [displayedCost, setDisplayedCost] = useState(0);
+  const [oldCost, setOldCost] = useState(0);
+  const [delayCost, setDelayCost] = useState(true);
 
   const donats = [
     {
-      title: 'goldJacket',
+      title: 'blacksmith',
       cost: 55,
     },
     {
-      title: 'goldJacket',
+      title: 'night',
       cost: 5,
     },
     {
-      title: 'goldJacket',
+      title: 'sleepy',
       cost: 19,
     },
     {
-      title: 'goldJacket',
+      title: 'pixels',
       cost: 49,
-    },
-    {
-      title: 'goldJacket',
-      cost: 25,
-    },
-    {
-      title: 'goldJacket',
-      cost: 10,
     },
   ];
 
   useEffect(() => {
     let newCost: number
-
+    
     if (actualDonat < donats.length - 1) {
       newCost = actualDonat + 1
     } else {
@@ -49,8 +43,9 @@ const Advertising = () => {
     }
 
     const donatTimer = setTimeout(() => {
+      setOldCost(donats[actualDonat].cost)
       setActualDonat(newCost)
-    }, 9000)
+    }, 7000)
 
     return () => clearTimeout(donatTimer)
   }, [actualDonat]);
@@ -78,23 +73,36 @@ const Advertising = () => {
     }
 
     const costTimer = setTimeout(() => {
-      setCost(costMas);
-    }, 1000)
+      setCost(costMas)
+    }, 500)
 
     return () => clearTimeout(costTimer)
 }, [actualDonat]);
 
 useEffect(() => {
-  if (actualCost > donats[actualDonat].cost) {
-    setTimeout(() => {
-      setActualCost(actualCost - 1);
-    }, 10)
-  } else if (actualCost < donats[actualDonat].cost) {
-    setTimeout(() => {
-      setActualCost(actualCost + 1);
-    }, 75)
+  let timeout = 0;
+  let newCost = displayedCost;
+
+  if (displayedCost > donats[actualDonat].cost) {
+    timeout = 10
+    newCost--
+  } else if (displayedCost < donats[actualDonat].cost && delayCost) {
+    timeout = 500
+    newCost++
+    setDelayCost(false)
+  } else if (displayedCost < donats[actualDonat].cost && !delayCost) {
+    timeout = 50
+    newCost++
+  } else {
+    setDelayCost(true)
   }
-}, [actualDonat, actualCost])
+
+  const costTimer = setTimeout(() => {
+    setDisplayedCost(newCost);
+  }, timeout)
+
+  return () => clearTimeout(costTimer)
+}, [actualDonat, displayedCost]);
 
   return (
     <div className='advertising'>
@@ -114,12 +122,12 @@ useEffect(() => {
                   src={gold}
                   key={number}
                   className={classNames(
-                    {'advertising__gold': true},
+                    {'advertising__gold advertising__gold_animation': true},
                     {'advertising__gold_hide': number > donats[actualDonat].cost - 1}
                   )}
                   style={{
                     right: `calc(30px * ${index})`,
-                    animationDelay: number > donats[actualDonat].cost - 1 && `calc(5s / ${number})` || `calc(0.05s * ${number})`,
+                    animationDelay: number > donats[actualDonat].cost - 1 && `calc(5s / ${number})` || `calc(0.05s * (${number} - ${oldCost}))`,
                   }}
                 />
               ))}
@@ -127,12 +135,18 @@ useEffect(() => {
           ))}
         </div>
         <div className='advertising__product'>
-          <img src={`assets/main/advertisin/${donats[actualDonat].title}.png`} />
-          <div>
-            <span>
-              {actualCost}
+          <span className='text_title'>
+            {donats[actualDonat].title}
+          </span>
+          <img
+            src={`assets/advertisin/${donats[actualDonat].title}.png`}
+            className='advertising__product_picture'
+          />
+          <div className='advertising__product_cost'>
+            <span className='text_title'>
+              {displayedCost}
             </span>
-            <img src={gold} />
+            <img className='advertising__gold' src={gold} />
           </div>
         </div>
       </div>

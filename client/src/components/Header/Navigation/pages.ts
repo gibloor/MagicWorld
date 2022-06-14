@@ -1,25 +1,13 @@
 const pages = [
   {
-    title: 'Game'
+    title: 'game'
   },
   {
-    title: 'Library of magic'
+    title: 'library of magic'
   },
   {
-    title: 'News'
+    title: 'news'
   },
-  // {
-  //   title: 'game3123214'
-  // },
-  // {
-  //   title: 'game3213143'
-  // },
-  // {
-  //   title: 'game32131'
-  // },
-  // {
-  //   title: 'game123'
-  // },
 ]
 
 export default pages;

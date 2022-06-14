@@ -40,6 +40,9 @@ $height: 600px;
   &__gold {
     width: 60px;
     height: 40px;
+  }
+
+  &__gold_animation {
     animation: goldDrop 0.5s forwards;
     position: absolute;
     opacity: 0;
@@ -50,7 +53,24 @@ $height: 600px;
   }
 
   &__product {
-    width: 400px;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__product_picture {
+    height: 50%;
+    width: 100%;
+  }
+
+  &__product_cost {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
   }
 }
 
