@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import Main from 'components/pages/Main';
 import Game from 'components/pages/Game';
+import MagicLib from 'components/pages/MagicLib';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -16,6 +17,7 @@ root.render(
         <Route path='/' element={<App />}>
           <Route path='' element={<Main />} />
           <Route path='game' element={<Game />} />
+          <Route path='lib-of-magic' element={<MagicLib />} />
           <Route
             path="*"
             element={

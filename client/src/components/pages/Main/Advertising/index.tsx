@@ -29,7 +29,7 @@ const Advertising = () => {
     },
     {
       title: 'pixels',
-      cost: 49,
+      cost: 10,
     },
   ];
 
@@ -127,7 +127,7 @@ useEffect(() => {
                   )}
                   style={{
                     right: `calc(30px * ${index})`,
-                    animationDelay: number > donats[actualDonat].cost - 1 && `calc(5s / ${number})` || `calc(0.05s * (${number} - ${oldCost}))`,
+                    animationDelay: number > donats[actualDonat].cost - 1 && `calc(0.5s / (${oldCost} - ${number}))` || `calc(0.05s * (${number} - ${oldCost}))`,
                   }}
                 />
               ))}
