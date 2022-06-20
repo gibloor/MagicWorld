@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import baseRoad from 'components/assets/magicLib/pedestals/baseRoad.png';
 import fon from 'components/assets/magicLib/pedestals/fon.jpeg';
@@ -23,8 +24,12 @@ const Pedestals = () => {
       <div className='pedestals__ways'>
         {roads.map(road => (
           <div key={road} className='pedestals__way'>
-            <img src={`assets/magicLib/pedestals/${road}Book.png`} className='pedestals__book' />
-            <img src={`assets/magicLib/pedestals/${road}Road.png`} className='pedestals__road' />
+          <Link to={`${road}`}>
+            <img src={`assets/magicLib/pedestals/${road}Book.png`} className='pedestals__book pedestals__unhover' />
+            <img src={`assets/magicLib/pedestals/${road}Book.png`} className='pedestals__book pedestals__hover' />
+            <img src={`assets/magicLib/pedestals/${road}Road.png`} className='pedestals__road pedestals__unhover' />
+            <img src={`assets/magicLib/pedestals/${road}Road.png`} className='pedestals__road pedestals__hover' />
+          </Link>
           </div>
         ))}
       </div>

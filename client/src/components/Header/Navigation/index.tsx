@@ -9,7 +9,7 @@ const Navigation = () => {
   return (
     <div className='navigation'>
       {pages.map(page => (
-        <Link to={`/${page.title}`} key={page.title} className='navigation__page_case'>
+        <Link to={`${page.title}`} key={page.title} className='navigation__page_case'>
           <span className='navigation__page text_title'>
             {page.title}
           </span>
