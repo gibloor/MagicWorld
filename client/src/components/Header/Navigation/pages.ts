@@ -3,7 +3,7 @@ const pages = [
     title: 'game'
   },
   {
-    title: 'lib-of-magic'
+    title: 'ways-of-magic'
   },
   {
     title: 'news'

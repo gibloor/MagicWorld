@@ -1,0 +1,103 @@
+.spells {
+  height: 95vh;
+  width: 90%;
+  margin: 5vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  &__window {
+    width: calc(99% - 300px);
+    height: 90%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    display: none;
+  }
+
+  &__video_show {
+    display: block;
+    z-index: 4;
+  }
+
+  &__video_hide {
+    display: block;
+    animation: 1s forwards hideBlock;
+    z-index: 5;
+  }
+
+  &__description {
+    position: absolute;
+    z-index: 6;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid white;
+    width: 300px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+  }
+
+  &__description_title {
+    margin-bottom: 15px;
+  }
+
+  &__list {
+    width: 250px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__item {
+    width: 100%;
+    height: 15%;
+    border: 1px solid white;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__blanket {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+  }
+
+  &__blanket_show {
+    animation: 0.5s forwards hideBlock;
+  }
+
+  &__blanket_hide {
+    animation: 0.5s forwards hideBlanket;
+  }
+}
+
+@keyframes hideBlock {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hideBlanket {
+  100% {
+    opacity: 0.5;
+  }
+}

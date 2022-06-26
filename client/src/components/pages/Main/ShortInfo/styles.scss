@@ -36,7 +36,6 @@ $locationHeight: 600px;
   &__location_picture {
     width: $locationWidth;
     height: $locationHeight;
-    position: absolute;
     z-index: -1;
     transform: rotate(-45deg);
   }
