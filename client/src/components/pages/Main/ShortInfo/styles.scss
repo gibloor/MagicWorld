@@ -6,58 +6,31 @@ $locationHeight: 600px;
   height: $locationHeight;
   display: flex;
   justify-content: center;
-  overflow: hidden;
   position: relative;
 
-  &__location_hiding {
-    display: none;
-    justify-content: center;
-    align-items: center;
+  &__location {
+    width: $locationWidth;
+    height: $locationHeight;
     position: absolute;
-    transform: rotate(45deg);
-    width: 1800px;
-    height: 1800px;
-    overflow: hidden;
-    z-index: 1;
-    transform-origin: center;
-    top: -100%;
+    z-index: 5;
   }
 
   &__location_new {
-    display: flex;
-    z-index: 2;
+    z-index: 6;
   }
+
   &__location_old {
-    display: flex;
-    z-index: 3;
-    animation: hideMove forwards linear 1.5s;
+    animation: 2s hideLocation forwards linear;
+    z-index: 7;
   }
 
-  &__location_picture {
-    width: $locationWidth;
-    height: $locationHeight;
-    z-index: -1;
-    transform: rotate(-45deg);
-  }
-
-  &__location_picture_old {
-    animation: hideHold forwards linear 1.5s;
-  }
-}
-
-@keyframes hideMove {
-  0% {
-    
-  }
-  100% {
-    transform: translateX(100%) translateY(100%) rotate(45deg);
-  }
-}
-
-@keyframes hideHold {
-  0% {
-  }
-  100% {
-    transform: rotate(-45deg) translateX(-150%) translateY(-300%);
+  @keyframes hideLocation {
+    0% {
+      clip-path: polygon(-50% 50%, -50% -50%, 100% 0%, 100% 100%, 0% 100%);
+    }
+  
+    100% {
+      clip-path: polygon(0% 200%, 200% 0%, 200% 0%, 200% 200%, 0% 200%);
+    }
   }
 }

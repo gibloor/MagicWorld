@@ -33,22 +33,15 @@ const ShortInfo = () => {
   return (
     <div className='short-info'>
       {locations.map((location, index) => (
-        <div
+        <img
           key={location}
           className={classNames(
-            {'short-info__location_hiding': true},
+            {'short-info__location': true},
             {'short-info__location_new': index === locationNum},
             {'short-info__location_old': index === locationNum - 1 || (locationNum === 0 && index === locations.length - 1)},
           )}
-        >
-          <img
-            className={classNames(
-              {'short-info__location_picture': true},
-              {'short-info__location_picture_old': index === locationNum - 1 || (locationNum === 0 && index === locations.length - 1)},
-            )}
-            src={`assets/gameContent/locations/${location}.jpg`}
-          />
-        </div>
+          src={`assets/gameContent/locations/${location}.jpg`}
+        />
       ))}
     </div>
   )

@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   flex-direction: column;
   overflow: hidden;
   position: relative;
@@ -24,7 +24,7 @@
   &__way {
     width: 150px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     flex-direction: column;
   }
 
