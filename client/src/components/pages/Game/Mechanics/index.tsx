@@ -6,7 +6,7 @@ const Mechanics = () => {
 
   return (
     <div>
-      Mechanics
+      Mechanicse
     </div>
   )
 };

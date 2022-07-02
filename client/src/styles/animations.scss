@@ -1,0 +1,12 @@
+.emerging {
+  animation: 2s emerging forwards linear;
+}
+@keyframes emerging {
+  0% {
+    clip-path: polygon(0% 100%, 0% 100%, 100% 0%, 100% 0%);
+  }
+
+  100% {
+    clip-path: polygon(50% 300%, -50% -100%, 50% -200%, 150% 200%);
+  }
+}
