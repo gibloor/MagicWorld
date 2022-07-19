@@ -24,16 +24,16 @@ const Doors = (props:Props) => {
     if (doorRef) {
       setOffset(doorRef.scrollTop)
     }
-  }
+  };
 
   useEffect(() => {
     if (offset > 450) {
       getMoovIn() 
     }
-  }, [offset])
+  }, [offset]);
 
   useEffect(() => {
-    setDoorRef(ref.current);
+    setDoorRef(ref.current)
     ref.current?.addEventListener("scroll", handleScroll)
 
     return function removeScroll() {

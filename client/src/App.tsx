@@ -11,7 +11,7 @@ const App = () => {
       <Header />
       <Outlet />
       <div>
-        basement
+        footer
       </div>
     </>
   );

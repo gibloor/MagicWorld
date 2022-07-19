@@ -13,6 +13,7 @@ const MagicLib = () => {
     const moovInTimer = setTimeout(() => {
       setMoovIn(true)
     }, 1000);
+    
     return () => clearTimeout(moovInTimer);
   }
 

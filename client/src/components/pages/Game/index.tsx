@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Features from './Features';
+import SpellsFactors from './SpellsFactors';
 import FightStage from './FightStage';
 import Legend from './Legend';
 import Mechanics from './Mechanics';
@@ -14,7 +14,7 @@ const Game = () => {
       <Legend />
       <Mechanics />
       <FightStage />
-      <Features />
+      <SpellsFactors />
     </div>
   )
 }
