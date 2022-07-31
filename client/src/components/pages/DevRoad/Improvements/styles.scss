@@ -1,0 +1,91 @@
+.improvements {
+  width: 80%;
+  min-width: 1200px;
+  height: 400px;
+  margin: 50px 0px;
+  position: relative;
+  // overflow: hidden;
+
+  &__block {
+    display: flex;
+    position: absolute;
+    height: 100%;
+  }
+
+  &__slide {
+    height: 400px;
+    display: flex;
+    position: relative;
+  }
+  &__arrow_block {
+    width: 100px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__arrow {
+    width: 70%;
+    padding: 10px;
+  }
+
+  &__step {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__picture_block {
+    height: 300px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  &__picture {
+    max-height: 100%;
+  }
+
+  &__text {
+    min-width: 150px;
+  }
+
+  &__line {
+    position: absolute;
+    bottom: -50px;
+    display: flex;
+    height: 25px;
+    width: 100%;
+  }
+
+  &__line_block {
+    background-color: purple;
+    height: 100%;
+  }
+
+  &__line_left {
+    width: calc(50% + 50px);
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  &__line_right {
+    width: calc(50% - 50px);
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  &__line_first {
+    width: 50%;
+    border-radius: 10px 0px 0px 10px;
+    position: absolute;
+    right: 0;
+  }
+
+  &__circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: purple;
+    position: absolute;
+    bottom: -62.5px;
+  }
+}

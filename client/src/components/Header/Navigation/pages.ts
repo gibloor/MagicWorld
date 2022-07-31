@@ -8,6 +8,9 @@ const pages = [
   {
     title: 'news'
   },
+  {
+    title: 'dev-road'
+  }
 ]
 
 export default pages;

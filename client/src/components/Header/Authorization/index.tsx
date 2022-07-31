@@ -3,6 +3,7 @@ import React from 'react';
 import './styles.scss';
 
 const Authorization = () => {
+
   return (
     <div className='authorization'>
       <span>

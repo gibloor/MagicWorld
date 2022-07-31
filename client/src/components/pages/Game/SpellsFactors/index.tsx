@@ -7,7 +7,8 @@ import './styles.scss';
 
 const SpellsFactors = () => {
 
-  const [showingSection, setShowingSection] = useState(factors[0].name);
+  const [showSection, setShowSection] = useState(factors[0].name);
+  const [showSilhouette, setShowSilhouette] = useState('')
 
   return (
     <div className='spells-factors'>
@@ -21,32 +22,36 @@ const SpellsFactors = () => {
             <div key={section.name}
               className={classNames(
                 {'spells-factors__button button_casual text_title': true},
-                {'***': section.name === showingSection},
+                {'***': section.name === showSection},
               )}
-              onClick={() => setShowingSection(section.name)}
+              onClick={() => setShowSection(section.name)}
             >
               {section.name}
             </div>
           ))}
         </div>
         <div className='spells-factors__info'>
-          <div className='spells-factors__silhouette'>
-            <img
-              src={`assets/game/spells-factors/silhouette/${showingSection}.png`}
-              className={classNames(
-                {'spells-factors__silhouette_picture': true},
-              )}
-            />
+          <div className='spells-factors__silhouette_case'>
             {factors.map(section => (
-              section.aspects.map(aspect => (
-                <img key={aspect}
-                  src={`assets/game/spells-factors/silhouette/${aspect}.png`}
-                  className={classNames(
-                    {'spells-factors__silhouette_picture': true},
-                    {'hide': section.name !== showingSection}
-                  )}
+              <div key={section.name}
+                className={classNames(
+                  {'hide': section.name !== showSection}
+                )}
+              >
+                <img
+                  src={`assets/game/spells-factors/silhouette/${showSection}.png`}
+                  className='spells-factors__silhouette spells-factors__silhouette_basic'
                 />
-              ))
+                {section.aspects.map(aspect => (
+                  <img key={aspect}
+                    src={`assets/game/spells-factors/silhouette/${aspect}.png`}
+                    className={classNames(
+                      {'spells-factors__silhouette': true},
+                      {'spells-factors__silhouette_standout': aspect === showSilhouette}
+                    )}
+                  />
+                ))}
+              </div>
             ))}
           </div>
           <div className='spells-factors__data'>
@@ -55,8 +60,14 @@ const SpellsFactors = () => {
                 <div key={aspect}
                   className={classNames(
                     {'spells-factors__data_block': true},
-                    {'hide': section.name !== showingSection}
+                    {'hide': section.name !== showSection}
                   )}
+                  onMouseEnter={() => {
+                    setShowSilhouette(aspect)
+                  }}
+                  onMouseLeave={() => {
+                    setShowSilhouette('')
+                  }}
                 >
                   <img
                     src={`assets/game/spells-factors/icons/${aspect}.png`}

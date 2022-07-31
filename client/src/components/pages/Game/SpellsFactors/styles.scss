@@ -32,19 +32,29 @@
     width: calc(100% - 90px);
   }
 
-  &__silhouette {
+  &__silhouette_case {
     position: relative;
     height: 100%;
     width: calc(100% - 300px);
     border: 1px solid white;
   }
 
-  &__silhouette_picture {
+  &__silhouette {
     position: absolute;
     height: 100%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0.5;
+  }
+
+  &__silhouette_basic {
+    z-index: -1;
+    opacity: 1;
+  }
+
+  &__silhouette_standout {
+    opacity: 1;
+    z-index: 5;
   }
 
   &__data {
