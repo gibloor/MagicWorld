@@ -3,16 +3,17 @@
   min-width: 1200px;
   height: 400px;
   margin: 50px 0px;
+  padding-bottom: 50px;
   position: relative;
-  // overflow: hidden;
+  overflow: hidden;
 
-  &__block {
+  &__steps{
     display: flex;
     position: absolute;
     height: 100%;
   }
 
-  &__slide {
+  &__step_block {
     height: 400px;
     display: flex;
     position: relative;
@@ -35,49 +36,49 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
   }
   &__picture_block {
     height: 300px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+    position: relative;
   }
   &__picture {
     max-height: 100%;
+  }
+
+  &__blackout {
+    position: absolute;
+  }
+
+  &__blackout_show {
+    opacity: 0;
+    animation: blackoutShow 0.2s forwards linear;
+  }
+
+  &__blackout_hide {
+    animation: blackoutHide 0.2s forwards linear;
   }
 
   &__text {
     min-width: 150px;
   }
 
+  &__star {
+    height: 55px;
+    position: absolute;
+    bottom: -34px;
+    z-index: 5;
+  }
+
   &__line {
     position: absolute;
-    bottom: -50px;
-    display: flex;
+    bottom: -25px;
     height: 25px;
-    width: 100%;
-  }
-
-  &__line_block {
     background-color: purple;
-    height: 100%;
-  }
-
-  &__line_left {
-    width: calc(50% + 50px);
-    border-radius: 0px 10px 10px 0px;
-  }
-
-  &__line_right {
-    width: calc(50% - 50px);
-    border-radius: 10px 0px 0px 10px;
-  }
-
-  &__line_first {
-    width: 50%;
-    border-radius: 10px 0px 0px 10px;
-    position: absolute;
-    right: 0;
+    opacity: 50%;
   }
 
   &__circle {
@@ -86,6 +87,20 @@
     border-radius: 100px;
     background-color: purple;
     position: absolute;
-    bottom: -62.5px;
+    bottom: 15px;
+    z-index: 4;
+    opacity: 0.5;
+  }
+}
+
+@keyframes blackoutShow {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blackoutHide {
+  to {
+    opacity: 0;
   }
 }

@@ -1,77 +1,116 @@
 import React, { useEffect, useRef, useState } from 'react';
+import classNames from 'classnames';
 
 import Circle from './Circle';
+import Steps from './Steps';
+import improvements from './improvements';
 import arrow from 'components/assets/devRoad/arrow.png';
+import star from 'components/assets/devRoad/star.png';
+import starBlackout from 'components/assets/devRoad/star-blackout.png';
 
 import './styles.scss';
+import AnimatedMove from './AnimatedMove';
 
 const Improvements = () => {
 
   const linesRef = useRef<Array<HTMLDivElement | null>>([]);
-
-  const improvements = [
-    'finish-main-parts-site',
-    'find an artist',
-    'finish-site',
-    'start-learn-unreal',
-    'make-part-game',
-    'drop-project-on-patreon',
-    'return-to-making-game',
-    'check-what-noone-care',
-    'start-make-wood-toys',
-  ];
+  const slidesRef = useRef<HTMLDivElement | null>(null);
 
   const [slide, setSlide] = useState(0);
-  const [prevSlide, setPrevSlide] = useState(0)
+  const [prevSlide, setPrevSlide] = useState(0);
+  const [startPos, setStartPos] = useState(0);
+  const [finishPos, setFinishPos] = useState(0);
+  const [duration, setDuration] = useState(0);
 
-  const changeSlide = (newSlide: number) => {
+  const windowSize = window.innerWidth;
+  const windowLength = slidesRef.current?.offsetWidth || 0;
+  const lastSlide = linesRef.current[linesRef.current.length - 1]?.offsetWidth || 0;
+  const rightLimit = windowSize - windowLength - lastSlide / 2;
+  const leftLimit = linesRef.current[0]?.getBoundingClientRect().x;
 
+
+  const changeStep = (newSlide: number) => {
     if (slide !== newSlide) {
       setSlide(newSlide);
       setPrevSlide(slide);
     }
   };
 
+  useEffect(() => {
+    if (slide !== prevSlide) {
+
+      const slidePos = linesRef.current[slide]?.getBoundingClientRect().x;
+      const slideSize = linesRef.current[slide]?.offsetWidth;
+
+      if (slideSize && slidePos) {
+        const relativePos = windowSize / 2 - slideSize / 2;
+        const newPos = finishPos - slidePos + relativePos;
+        setStartPos(finishPos);
+        setDuration(Math.abs(prevSlide - slide) * 0.2);
+        
+        if (leftLimit && slidePos < relativePos && (newPos + leftLimit - finishPos) > 0) {
+          setFinishPos(0)
+        } else if (rightLimit > newPos) {
+          setFinishPos(rightLimit)
+        } else {
+          setFinishPos(newPos)
+        }
+      }
+    }
+  }, [slide]);
+
   return (
     <div className='improvements'>
-      <div className='improvements__block'>
-        {improvements.map((improvement, index) => (
-          <div key={improvement}
-            className='improvements__slide'
-          >
-            {index !== 0 &&
-              <div
-                className='improvements__arrow_block'
-              >
-                <img src={arrow} className='improvements__arrow' />
-              </div>
-            }
-
-            <div className='improvements__step' onClick={() => changeSlide(index)}>
-              <div className='improvements__picture_block'>
-                <img src={`assets/devRoad/improvements/step-${index}.png`} className='improvements__picture' />
-              </div>
-              <span className='improvements__text'>
-                {improvement}
-              </span>
-            </div>
-
-            <div className='improvements__line' ref={el => linesRef.current[index] = el}>
+      <AnimatedMove duration={duration} finishPos={finishPos} startPos={startPos} ref={slidesRef}>
+        <>
+          {improvements.map((improvement, index) => (
+            <div key={improvement}
+              className='improvements__step_block'
+              ref={el => linesRef.current[index] = el}
+            >
               {index !== 0 &&
-                <div className='improvements__line_block improvements__line_left' />
+                <div
+                  className='improvements__arrow_block'
+                >
+                  <img src={arrow} className='improvements__arrow' />
+                </div>
               }
-              {index !== improvements.length - 1 && index !== 0 &&
-                <div className='improvements__line_block improvements__line_right' />
-              }
-              {index === 0 &&
-                <div className='improvements__line_block improvements__line_first' />
-              }
-            </div>
 
-          </div>
-        ))}
-        <Circle slide={slide} prevSlide={prevSlide} linesRef={linesRef} />
-      </div>
+              <div className='improvements__step' onClick={() => changeStep(index)}>
+                <div className='improvements__picture_block'>
+                  <img src={`assets/devRoad/improvements/step-${index}.png`} className='improvements__picture' />
+                  <img
+                    src={`assets/devRoad/improvements/step-${index}-blackout.png`}
+                    className={classNames(
+                      {'improvements__picture improvements__blackout': true},
+                      {'improvements__blackout_show': slide < index && prevSlide > index},
+                      {'improvements__blackout_hide': slide >= index},
+                    )}
+                    style={{animationDelay: `${Math.abs(prevSlide - index) / 5}s`}}
+                  />
+                </div>
+                <span className='improvements__text'>
+                  {improvement}
+                </span>
+                <img src={star} className='improvements__star' />
+                <img src={starBlackout} 
+                  className={classNames(
+                    {'improvements__star improvements__blackout': true},
+                    {'improvements__blackout_show': slide < index && prevSlide > index},
+                    {'improvements__blackout_hide': slide >= index},
+                  )}
+                  style={{animationDelay: `${Math.abs(prevSlide - index) / 5}s`}}
+                />
+              </div>
+              <div
+                className='improvements__line'
+              />
+            </div>
+          ))}
+          
+          <Circle slide={slide} prevSlide={prevSlide} linesRef={linesRef} />
+        </>
+      </AnimatedMove>
     </div>
   )
 }
