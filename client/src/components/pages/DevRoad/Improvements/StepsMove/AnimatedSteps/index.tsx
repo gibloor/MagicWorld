@@ -23,8 +23,8 @@ const animation = (props: AnimationProps) =>
   css`
     ${move} ${props.duration}s forwards;
   `
-const AnimatedMove = styled.div<AnimationProps>`
+const AnimatedSteps = styled.div<AnimationProps>`
   animation: ${animation};
 `;
 
-export default AnimatedMove;
+export default AnimatedSteps;

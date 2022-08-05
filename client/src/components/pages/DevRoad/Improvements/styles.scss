@@ -75,10 +75,11 @@
 
   &__line {
     position: absolute;
-    bottom: -25px;
+    bottom: 27.5px;
     height: 25px;
     background-color: purple;
     opacity: 50%;
+    width: 100%;
   }
 
   &__circle {

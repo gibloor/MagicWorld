@@ -5,17 +5,19 @@ import AnimatedCircle from './AnimatedCircle';
 interface Props {
   slide: number;
   prevSlide: number;
-  linesRef: MutableRefObject<(HTMLDivElement | null)[]>;
+  slidesRef: MutableRefObject<(HTMLDivElement | null)[]>;
+  duration: number;
+  startPos: number;
+  finishPos: number;
+  changeStart: (long:number) => void;
+  changeFinish: (long:number) => void;
 }
 
 const Circle = (props: Props) => {
 
-  const { slide, prevSlide, linesRef } = props;
+  const { slide, prevSlide, slidesRef, duration, startPos, finishPos, changeStart, changeFinish } = props;
 
   const [staticPos, setStaticPos] = useState(0);
-  const [startPos, setStartPos] = useState(0);
-  const [finishPos, setFinishPos] = useState(0);
-  const [duration, setDuration] = useState(0);
 
   const ref = useRef<HTMLDivElement | null>(null);
 
@@ -26,7 +28,7 @@ const Circle = (props: Props) => {
       if (slide > prevSlide) {
 
         for (let i = prevSlide ; i <= slide ; i++) {
-          const width = linesRef.current[i]?.offsetWidth;
+          const width = slidesRef.current[i]?.offsetWidth;
 
           if (width) {
             if (i === 0) {
@@ -42,7 +44,7 @@ const Circle = (props: Props) => {
         }
       } else {
         for (let i = prevSlide ; i >= slide ; i--) {
-          const width = linesRef.current[i]?.offsetWidth;
+          const width = slidesRef.current[i]?.offsetWidth;
 
           if (width) {
             if (i === 0) {
@@ -58,14 +60,13 @@ const Circle = (props: Props) => {
         }
       }
 
-      setStartPos(finishPos);
-      setFinishPos(newPos);
-      setDuration(Math.abs(prevSlide - slide) * 0.2);
+      changeStart(finishPos);
+      changeFinish(newPos);
     }
   }, [slide]);
 
   useEffect(() => {
-    const startPos = linesRef.current[0]?.offsetWidth || 0;
+    const startPos = slidesRef.current[0]?.offsetWidth || 0;
     setStaticPos(startPos / 2 - 25);
   }, []);
 
