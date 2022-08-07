@@ -1,16 +1,18 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import './styles.scss';
 
 const Authorization = () => {
+  const { t } = useTranslation();
 
   return (
     <div className='authorization'>
-      <span>
-        Sign In
+      <span className='authorization__button button_little'>
+        {t('header.auth.sign-in')}
       </span>
-      <span>
-        Sign Up
+      <span className='authorization__button button_little'>
+        {t('header.auth.sign-up')}
       </span>
     </div>
   )

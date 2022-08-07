@@ -13,7 +13,7 @@ const mechanics = [
   },
   {
     name:   'souls-world',
-    windowType: 'casual',
+    windowType: 'double',
   },
 ]
 

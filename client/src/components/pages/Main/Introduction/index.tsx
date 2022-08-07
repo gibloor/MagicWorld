@@ -1,7 +1,7 @@
 import React from 'react';
 import { osName } from "react-device-detect";
+import { useTranslation } from 'react-i18next';
 
-//Of course I don't have my own cinematics
 import fonVideo from 'components/assets/main/fonVideo.mp4';
 import nameGame from 'components/assets/main/nameGame.png';
 import gameSymbol from 'components/assets/gameSymbol.png';
@@ -9,6 +9,8 @@ import gameSymbol from 'components/assets/gameSymbol.png';
 import './styles.scss';
 
 const Introduction = () => {
+
+  const { t } = useTranslation();
 
   return (
     <div className='introduction'>
@@ -27,14 +29,14 @@ const Introduction = () => {
             <img src={nameGame} className='introduction__game_name' alt='name of game' />
             <img src={gameSymbol} className='introduction__game_symbol' alt='game symbol' />
           </div>
-          {/* chane on click if game exist */}
+          {/* change on click if game exist */}
           {osName === 'Mac OS' &&
             <a
               className='button_casual text_title'
               href='components/assets/main/MacOS.jpg'
               download
             >
-              Let's go play on mac os!
+              {t('main.introduction.mac')}
             </a> ||
           osName === 'Windows' &&
             <a
@@ -42,17 +44,16 @@ const Introduction = () => {
               href='components/assets/main/Windows.png'
               download
             >
-              Let's go play on windows!
+              {t('main.introduction.windows')}
             </a> ||
             <span className='text_title'>
-              Your device or OS does not fit
+              {t('main.introduction.other')}
             </span>
           }
         </div>
-        <span className='text_big'>
-          "Existing only <br/>
-          conceptually, <br/>
-          awesome game!"
+        {/* change on click if game exist */}
+        <span className='text_big introduction__big-text'>
+          {t('main.introduction.big-text')}
         </span>
       </div>
     </div>

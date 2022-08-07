@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Navigation from './Navigation';
 import LangChanger from './LangChanger';
@@ -7,7 +8,6 @@ import Authorization from './Authorization';
 import logo from 'components/assets/header/logo.png';
 
 import './styles.scss';
-import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (

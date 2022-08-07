@@ -5,9 +5,10 @@ import picture from 'components/assets/temporary/newsPicture.png';
 import './styles.scss';
 
 //before adding DB
+//change code after adding DB
 const newsPool = [
   {
-    title: 'news1 sfsdf dsdfsfdsfdf',
+    title: 'news1',
     date: '18.01.22',
     picture: picture,
     text:'sdqwewerfwefwf wefwefwe wefewfwefwe fwefwfwfew'
@@ -25,7 +26,7 @@ const newsPool = [
     text:'sdqwewerfwefwf wefwefwe'
   },
   {
-    title: 'news1cweecw vewwewwwxw  ',
+    title: 'news4',
     date: '18.01.22',
     picture: picture,
     text:'sdqwewerfwefwf wefwefwe wefewfwefwe fwefwfwfew reteterterter wefwefrw werwer ewrwer we we werwsdcew wfwefwdfer'

@@ -13,7 +13,7 @@ const Game = () => {
     <div>
       <Legend />
       <Mechanics />
-      <FightStage />
+      {/* <FightStage /> */}
       <SpellsFactors />
     </div>
   )

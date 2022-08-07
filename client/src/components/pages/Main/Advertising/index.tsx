@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 import goldRoom from 'components/assets/main/goldRoom.jpeg';
 import gold from 'components/assets/main/gold.png';
@@ -8,12 +9,15 @@ import './styles.scss';
 
 const Advertising = () => {
 
+  const { t } = useTranslation();
+
   const [cost, setCost] = useState<number[][]>([[]]);
   const [actualDonat, setActualDonat] = useState(0);
   const [displayedCost, setDisplayedCost] = useState(0);
   const [oldCost, setOldCost] = useState(0);
   const [delayCost, setDelayCost] = useState(true);
 
+  //take from db
   const donats = [
     {
       title: 'blacksmith',
@@ -127,7 +131,9 @@ useEffect(() => {
                   )}
                   style={{
                     right: `calc(30px * ${index})`,
-                    animationDelay: number > donats[actualDonat].cost - 1 && `calc(0.5s / (${oldCost} - ${number}))` || `calc(0.05s * (${number} - ${oldCost}))`,
+                    animationDelay: number > donats[actualDonat].cost - 1 &&
+                                  `calc(0.5s / (${oldCost} - ${number}))` ||
+                                  `calc(0.05s * (${number} - ${oldCost}))`,
                   }}
                 />
               ))}
@@ -136,7 +142,7 @@ useEffect(() => {
         </div>
         <div className='advertising__product'>
           <span className='text_title'>
-            {donats[actualDonat].title}
+            {t(`main.advertising.${donats[actualDonat].title}`)}
           </span>
           <img
             src={`assets/advertisin/${donats[actualDonat].title}.png`}

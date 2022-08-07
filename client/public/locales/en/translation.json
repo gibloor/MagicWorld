@@ -1,0 +1,59 @@
+{
+  "header": {
+    "navigation": {
+      "ways-of-magic": "Ways of Magic",
+      "game": "Game",
+      "news": "News",
+      "dev-road": "Dev road"
+    },
+    "auth": {
+      "sign-in": "Sign in",
+      "sign-up": "Sign up"
+    },
+    "langs": {
+      "en": "english",
+      "ru": "russian"
+    }
+  },
+
+  "main": {
+    "introduction": {
+      "mac": "Time to burn mac!",
+      "windows": "Let's go play on windows!",
+      "other": "You device suck",
+      "big-text": "Existing only\n conceptually,\n awesome game!"
+    },
+    "advertising": {
+      "blacksmith": "Blacksmith",
+      "night": "Night",
+      "sleepy": "Sleepy",
+      "pixels": "Pixels"
+    }
+  },
+
+  "game": {
+    "legends": {
+      "planet": "That was casual planet without some magic. But in one battle on this planet droped magic stone what changed all",
+      "landscape": "After 500 years landscape chanched absolutly",
+      "casters": "The fittest started called magician"
+    },
+    "mechanics": {
+      "counterfeiting": {
+        "title": "Counterfeiting",
+        "text": "You can make fake money"
+      },
+      "aging": {
+        "title": "Aging",
+        "text": ""
+      },
+      "spells-diversity": {
+        "title": "Spells diversity",
+        "text": ""
+      },
+      "souls-world": {
+        "title": "Souls world",
+        "text": ""
+      }
+    }
+  }
+}

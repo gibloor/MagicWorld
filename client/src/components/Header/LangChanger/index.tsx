@@ -1,5 +1,7 @@
 import React from 'react';
 import i18n from 'i18n';
+import { useTranslation } from 'react-i18next';
+import classNames from 'classnames';
 
 import planet from 'components/assets/header/planet.png';
 
@@ -7,23 +9,31 @@ import './styles.scss';
 
 const LangChanger = () => {
 
+  const { t } = useTranslation();
+
   const langs = [
     'en',
-    'ruasd', 
-    // 'sadsdasd', 'sadsdasd', '123', 'sadsdasd'
+    'ru',
   ];
 
   return (
     <div className='lang-changer'>
       <img src={planet} className='lang-changer__img' />
-      <div className='lang-changer__case'>
-        {langs.map(lang => (
-          <span key={lang}
-            onClick={() => (i18n.changeLanguage(lang))}
-          >
-            {lang}
-          </span>
-        ))}
+      <div className='lang-changer__window_case'>
+        <div className='lang-changer__window'>
+          {langs.map(lang => (
+            <span key={lang}
+              onClick={() => (i18n.changeLanguage(lang))}
+              // className='lang-changer__lang'
+              className={classNames(
+                {'lang-changer__lang': true},
+                {'lang-changer__lang_selected': i18n.language === lang}
+              )}
+            >
+              {t(`header.langs.${lang}`)}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   )

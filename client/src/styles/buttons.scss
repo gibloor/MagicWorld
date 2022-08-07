@@ -6,3 +6,20 @@
 .button_casual:hover {
   border-color: rgb(227, 67, 39);
 }
+.button_little {
+  cursor: pointer;
+  border-radius: 25px;
+  border: 1px solid white;
+}
+
+.button_little:hover {
+  animation-direction: normal;
+  animation: discoloration 0.4s forwards;
+}
+
+@keyframes discoloration {
+  to {
+    background-color: white;
+    color: black;
+  }
+}
