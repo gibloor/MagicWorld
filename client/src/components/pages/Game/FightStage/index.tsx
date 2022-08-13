@@ -1,70 +1,74 @@
-import React, { useEffect, useState, useRef } from "react";
-import { useInView } from 'react-hook-inview';
-
-import battleground from 'components/assets/game/battleground.jpg';
-import battlegroundStaff from 'components/assets/game/battleground-staff.png';
-import markup from 'components/assets/game/markup.png';
-import stageDisplay from 'components/assets/game/stage-display.png';
+import React, { useEffect, useRef, useState } from "react";
+import classNames from "classnames";
+import { useTranslation } from "react-i18next";
 
 import interfaceItems from "./interfaceItems";
+
 import './styles.scss';
 
 const FightStage = () => {
 
-  const [scrollRef, scrollView] = useInView();
-  const [scrolled, setScrolled] = useState(false);  
+  const { t } = useTranslation();
 
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!scrolled && scrollView) {
-      setScrolled(true)
-    } else if (scrolled && !scrollView) {
-      setScrolled(false)
-    }
-  }, [scrollRef, scrollView]);
+  const [position, setPosition] = useState(0);
+  const [height, setHeight] = useState(0);
+
+  const checkScroll = () => {
+    const blockPos = ref.current?.getBoundingClientRect().y || 0;
+    setPosition(blockPos);
+  };
 
   useEffect(() => {
-    if (scrolled && ref.current?.offsetTop) {
-      window.scrollTo({
-        top: ref.current.offsetTop,
-        behavior: "smooth"
-      });
+    window.addEventListener('scroll', checkScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', checkScroll);
     }
-  }, [scrolled]);
+
+  }, []);
 
   useEffect(() => {
-    const userPosition = ref.current?.getBoundingClientRect();
-    if (ref.current && userPosition && userPosition.top < 0) {
-      ref.current.scrollTop = ref.current.scrollHeight
+    const blockHeight = ref.current?.offsetHeight;
+
+    if (blockHeight) {
+      setHeight(blockHeight - window.innerHeight);
     }
   }, []);
 
   return (
-    <div className='fightstage' ref={ref}>
-
-      <div className='fightstage__block_case' ref={scrollRef}>
-        <div className='fightstage__block'>
-          <img src={battleground} className='fightstage__background' />
-          <img src={markup} className='fightstage__background' />
-          <img src={battlegroundStaff} className='fightstage__background' />
-          <img src={stageDisplay} className='fightstage__stage-display' />
-        </div>
-      </div>
-
-      <div className='fightstage__scroller'>
+    <div ref={ref} className='fightstage'>
+      <div className='fightstage__strip'>
         {interfaceItems.map(item => (
-          <div key={item} className='fightstage__scroller_info'>
-            <span className="text_casual">
-              {item} title
+          <div key={item.name} className='fightstage__strip_block'>
+            <span className='title'>
+              {t(`game.fightstage.${item.name}.title`)}
             </span>
-            <span className="text_little">
-              {item} upper long text very good for example pokabu zikabu bruka vila
+            <span className='text'>
+              {t(`game.fightstage.${item.name}.text`)}
             </span>
           </div>
         ))}
       </div>
-      
+      <div
+        className={classNames(
+          {'fightstage__background': true},
+          {'fightstage__background_fixed': position < 0 && -position < height},
+          {'fightstage__background_under': position < 0} 
+        )}
+      >
+        {interfaceItems.map((item, index) => (
+          <img
+            key={item.name}
+            src={`assets/game/fightstage/${item.name}.png`}
+            className={classNames(
+              {'fightstage__background_img': true},
+              {'fightstage__background_img_show': (-position + window.innerHeight * 0.2) / window.innerHeight  > index}
+            )}
+          />
+        ))}
+      </div>
     </div>
   )
 };

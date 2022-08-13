@@ -54,6 +54,24 @@
         "title": "Souls world",
         "text": ""
       }
+    },
+    "fightstage": {
+      "battleground": {
+        "title": "Battleground",
+        "text": "In us (my) game we (I) have (not now :D) deferent battleground: forests and else (:D)"
+      },
+      "markup": {
+        "title": "Markup",
+        "text": "Move and attacks going on divided into cells area in with y, x and z coordinates"
+      },
+      "battleground-staff": {
+        "title": "More about battle",
+        "text": "The battle can be between more than to people. We have trees and stones and else"
+      },
+      "stage-display": {
+        "title": "Battle stages",
+        "text": "I don't want answer on this now (Because i have't thought it)"
+      }
     }
   }
 }

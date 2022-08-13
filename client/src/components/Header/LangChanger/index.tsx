@@ -1,5 +1,4 @@
 import React from 'react';
-import i18n from 'i18n';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 
@@ -9,7 +8,7 @@ import './styles.scss';
 
 const LangChanger = () => {
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const langs = [
     'en',
@@ -23,8 +22,7 @@ const LangChanger = () => {
         <div className='lang-changer__window'>
           {langs.map(lang => (
             <span key={lang}
-              onClick={() => (i18n.changeLanguage(lang))}
-              // className='lang-changer__lang'
+              onClick={() => i18n.changeLanguage(lang)}
               className={classNames(
                 {'lang-changer__lang': true},
                 {'lang-changer__lang_selected': i18n.language === lang}

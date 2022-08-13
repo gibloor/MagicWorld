@@ -1,8 +1,16 @@
 const interfaceItems = [
-  'battleground',
-  'markup',
-  'fightStages',
-  ''
+  {
+    name: 'battleground',
+  },
+  {
+    name: 'markup',
+  },
+  {
+    name: 'battleground-staff',
+  },
+  {
+    name: 'stage-display',
+  },
 ]
 
 export default interfaceItems;

@@ -33,7 +33,7 @@ const Introduction = () => {
           {osName === 'Mac OS' &&
             <a
               className='button_casual text_title'
-              href='components/assets/main/MacOS.jpg'
+              href='/assets/main/MacOS.jpg'
               download
             >
               {t('main.introduction.mac')}
@@ -41,7 +41,7 @@ const Introduction = () => {
           osName === 'Windows' &&
             <a
               className='button_casual text_title'
-              href='components/assets/main/Windows.png'
+              href='/assets/main/Windows.png'
               download
             >
               {t('main.introduction.windows')}

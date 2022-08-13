@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import './styles.scss';
 
@@ -11,19 +11,29 @@ const Double = (props: Props) => {
   const { name } = props;
 
   const ref = useRef<HTMLDivElement | null>(null);
+  const mouseDown = useRef<boolean>(false);
 
   const [shift, setShift] = useState(50);
 
-  const moveSeparator = (e: React.MouseEvent<HTMLDivElement>) => {
+  const dragMove = (event: MouseEvent) => {
     const divPos = ref.current?.getBoundingClientRect().x || 0;
     const divSize = ref.current?.offsetWidth || 0;
 
-    console.log()
-    setShift(Math.round((e.clientX - divPos - 2) / divSize * 100))
-  }
+    if (mouseDown.current) {
+      setShift(Math.round((event.screenX - divPos - 2) / divSize * 100))
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('mousemove', dragMove);
+
+    return () => {
+      window.removeEventListener('mousemove', dragMove);
+    }
+  }, []);
 
   return (
-      <div className='double' ref={ref}>
+      <div className='double'>
         <img
           src={`assets/game/mechanics/${name}-first.jpg`}
           className='mechanics__picture double__picture'
@@ -37,14 +47,18 @@ const Double = (props: Props) => {
         />
         <div
           className='double__separator_case'
-          onMouseDown={(e) => (moveSeparator(e))}
-          onClick={(e) => (moveSeparator(e))}
+          ref={ref}
         >        
           <div
             className='double__separator'
             style={{
               left: `${shift}%`
             }}
+          />
+          <div className="double__blanket"
+            onMouseDown={() => (mouseDown.current = true)}
+            onMouseUp={() => (mouseDown.current = false)}
+            onMouseOut={() => (mouseDown.current = false)}
           />
         </div>
       </div>
