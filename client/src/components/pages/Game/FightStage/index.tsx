@@ -64,7 +64,7 @@ const FightStage = () => {
             src={`assets/game/fightstage/${item.name}.png`}
             className={classNames(
               {'fightstage__background_img': true},
-              {'fightstage__background_img_show': (-position + window.innerHeight * 0.2) / window.innerHeight  > index}
+              {'fightstage__background_img_show': (-position + window.innerHeight * 0.35) / window.innerHeight  > index}
             )}
           />
         ))}
