@@ -15,7 +15,16 @@ interface Props {
 
 const Circle = (props: Props) => {
 
-  const { slide, prevSlide, slidesRef, duration, startPos, finishPos, changeStart, changeFinish } = props;
+  const {
+    slide,
+    prevSlide,
+    slidesRef,
+    duration,
+    startPos,
+    finishPos,
+    changeStart,
+    changeFinish
+  } = props;
 
   const [staticPos, setStaticPos] = useState(0);
 

@@ -1,9 +1,5 @@
-import classNames from 'classnames';
 import React, { useState } from 'react';
-
-
-import fonVideo from 'components/assets/main/fonVideo.mp4';
-
+import classNames from 'classnames';
 
 import './styles.scss';
 

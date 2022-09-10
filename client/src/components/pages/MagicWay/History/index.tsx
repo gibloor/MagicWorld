@@ -46,9 +46,6 @@ const History = (props: Props) => {
           </div>
         ))}
       </div>
-      {/* History
-
-     table: how found and started, some historical facts, how popular and what thinking about this way persons */}
     </div>
   )
 }

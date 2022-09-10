@@ -16,7 +16,7 @@ const Pedestals = () => {
     'cyan',
     'blue',
     'violet'
-  ]
+  ];
   
   return (
     <div className='pedestals'>

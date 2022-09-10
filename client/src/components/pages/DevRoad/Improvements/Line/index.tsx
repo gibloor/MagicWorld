@@ -1,4 +1,5 @@
 import React, { MutableRefObject } from 'react';
+
 import AnimatedLine from './AnimatedLine';
 
 interface Props {

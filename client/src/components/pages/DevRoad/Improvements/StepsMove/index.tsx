@@ -1,5 +1,6 @@
-import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
+import React, { MutableRefObject, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+
 import AnimatedSteps from './AnimatedSteps';
 
 interface Props {

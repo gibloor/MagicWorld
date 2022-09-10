@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import goldRoom from 'components/assets/main/goldRoom.jpeg';
 import gold from 'components/assets/main/gold.png';
+import donats from './donats';
 
 import './styles.scss';
 
@@ -17,33 +18,11 @@ const Advertising = () => {
   const [oldCost, setOldCost] = useState(0);
   const [delayCost, setDelayCost] = useState(true);
 
-  //take from db
-  const donats = [
-    {
-      title: 'blacksmith',
-      cost: 55,
-    },
-    {
-      title: 'night',
-      cost: 5,
-    },
-    {
-      title: 'sleepy',
-      cost: 19,
-    },
-    {
-      title: 'pixels',
-      cost: 10,
-    },
-  ];
-
   useEffect(() => {
-    let newCost: number
+    let newCost = 0
     
     if (actualDonat < donats.length - 1) {
       newCost = actualDonat + 1
-    } else {
-      newCost = 0
     }
 
     const donatTimer = setTimeout(() => {
@@ -132,8 +111,8 @@ useEffect(() => {
                   style={{
                     right: `calc(30px * ${index})`,
                     animationDelay: number > donats[actualDonat].cost - 1 &&
-                                  `calc(0.5s / (${oldCost} - ${number}))` ||
-                                  `calc(0.05s * (${number} - ${oldCost}))`,
+                      `calc(0.5s / (${oldCost} - ${number}))` ||
+                      `calc(0.05s * (${number} - ${oldCost}))`,
                   }}
                 />
               ))}
