@@ -61,7 +61,7 @@ const FightStage = () => {
         {interfaceItems.map((item, index) => (
           <img
             key={item.name}
-            src={`assets/game/fightstage/${item.name}.png`}
+            src={`${process.env.PUBLIC_URL}/assets/game/fightstage/${item.name}.png`}
             className={classNames(
               {'fightstage__background_img': true},
               {'fightstage__background_img_show': (-position + window.innerHeight * 0.35) / window.innerHeight  > index}

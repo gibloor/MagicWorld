@@ -124,7 +124,7 @@ useEffect(() => {
             {t(`main.advertising.${donats[actualDonat].title}`)}
           </span>
           <img
-            src={`assets/advertisin/${donats[actualDonat].title}.png`}
+            src={`${process.env.PUBLIC_URL}/assets/advertisin/${donats[actualDonat].title}.png`}
             className='advertising__product_picture'
           />
           <div className='advertising__product_cost'>

@@ -8,11 +8,11 @@ import './styles.scss';
 
 const LangChanger = () => {
 
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const langs = [
     'en',
-    'ru',
+    'pl',
   ];
 
   return (
@@ -28,7 +28,7 @@ const LangChanger = () => {
                 {'lang-changer__lang_selected': i18n.language === lang}
               )}
             >
-              {t(`header.langs.${lang}`)}
+              {lang}
             </span>
           ))}
         </div>

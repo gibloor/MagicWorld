@@ -42,7 +42,7 @@ const History = (props: Props) => {
               {'history__content_shown': index === itemShown}
             )}
           >
-            <img className='history__picture' src={`/assets/magicWays/${way}/history/${item}.jpg`} />
+            <img className='history__picture' src={`${process.env.PUBLIC_URL}/assets/magicWays/${way}/history/${item}.jpg`} />
           </div>
         ))}
       </div>

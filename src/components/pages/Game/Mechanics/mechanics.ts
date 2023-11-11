@@ -12,7 +12,7 @@ const mechanics = [
     windowType: 'casual',
   },
   {
-    name:   'souls-world',
+    name: 'souls-world',
     windowType: 'double',
   },
 ]

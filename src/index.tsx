@@ -19,7 +19,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}>
-          <Route path='' element={<Main />} />
+          <Route path='MagicWorld' element={<Main />} />
           <Route path='game' element={<Game />} />
           <Route path='ways-of-magic' element={<MagicWays />} />
           <Route path='ways-of-magic/:way' element={<MagicWay />} />

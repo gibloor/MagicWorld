@@ -12,7 +12,7 @@ import './styles.scss';
 const Header = () => {
   return (
     <div className='header'>
-      <Link to='/' className='header__logo_case'>
+      <Link to='/MagicWorld' className='header__logo_case'>
         <img src={logo} alt='logo' className='header__logo' />
       </Link>
       <Navigation />
