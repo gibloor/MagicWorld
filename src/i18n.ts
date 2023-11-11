@@ -12,7 +12,7 @@ i18n
       escapeValue: false,
     },
     backend: {
-      loadPath: `MagicWorld/locales/{{lng}}/{{ns}}.json`
+      loadPath: `/MagicWorld/locales/{{lng}}/{{ns}}.json`
     }
   });
 

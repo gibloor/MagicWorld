@@ -4,32 +4,30 @@ import picture from 'components/assets/temporary/newsPicture.png';
 
 import './styles.scss';
 
-//before adding DB
-//change code after adding DB
 const newsPool = [
   {
-    title: 'news1',
+    title: 'New Magical Artifact Unveiled!',
     date: '18.01.22',
-    picture: picture,
-    text:'sdqwewerfwefwf wefwefwe wefewfwefwe fwefwfwfew'
+    picture: 'news-1',
+    text: 'A mysterious magical artifact has been discovered in the world of MagicWorld. Experts are currently unable to decipher its properties, but it is already generating immense interest among wizards and researchers.'
   },
   {
-    title: 'news12',
-    date: '18.01.22',
-    picture: picture,
-    text:'sdqwewerfwefwf wefwefwe wefewfwefwe fwefwfwfew reteterterter wefwefrw werwer ewrwer we we werwsdcew wfwefwdfer'
+    title: 'Magic School Completed',
+    date: '4.06.22',
+    picture: 'news-2',
+    text: 'In MagicWorld, the construction of a state-of-the-art magic school has been completed. Future wizards will be learning new spells and magical arts within its walls. The school\'s grand opening is scheduled for the coming weeks.'
   },
   {
-    title: 'news13',
-    date: '18.01.22',
-    picture: picture,
-    text:'sdqwewerfwefwf wefwefwe'
+    title: 'Magical Tournament',
+    date: '24.09.22',
+    picture: 'news-3',
+    text: 'The upcoming magical tournament in MagicWorld promises to be thrilling! Participants can expect new challenges, mysterious labyrinths, and, of course, magical prizes. Get ready for an epic showdown!'
   },
   {
-    title: 'news4',
-    date: '18.01.22',
-    picture: picture,
-    text:'sdqwewerfwefwf wefwefwe wefewfwefwe fwefwfwfew reteterterter wefwefrw werwer ewrwer we we werwsdcew wfwefwdfer'
+    title: 'New Magical Creature Discovered',
+    date: '7.04.23',
+    picture: 'news-4',
+    text: 'Researchers in MagicWorld report the discovery of a new magical creature. It possesses extraordinary abilities and will make an excellent companion for those who dare to tame it.'
   },
 ];
 
@@ -39,7 +37,7 @@ const ActualNews = () => {
     <div className='actual-news'>
       {newsPool.map(news => (
         <div key={news.title} className='actual-news__case'>
-          <img src={news.picture} alt='about news' className='actual-news__picture'/>
+          <img src={`/MagicWorld/assets/main/news/${news.picture}.jpg`} alt='about news' className='actual-news__picture'/>
           <div className='actual-news__block_case'>
             <div className='actual-news__block'>
               <span className='text_casual'>

@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  gap: 50px;
+
+  &__title {
+    font-size: 28px;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  &__rolling {
+    height: 175px;
+  }
+}

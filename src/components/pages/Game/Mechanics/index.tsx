@@ -18,7 +18,7 @@ const Mechanics = () => {
             {item.windowType === 'double' &&
               <Double name={item.name} /> ||
               <>
-                <img src={`MagicWorld/assets/game/mechanics/${item.name}.jpg`} className='mechanics__picture'/>
+                <img src={`/MagicWorld/assets/game/mechanics/${item.name}.jpg`} className='mechanics__picture'/>
                 <div className='mechanics__obscure' />
               </> 
             }

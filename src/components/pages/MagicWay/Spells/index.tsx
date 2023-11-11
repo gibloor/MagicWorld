@@ -36,7 +36,7 @@ const Spells = (props: Props) => {
               {'spells__video_hide': index === hideSpell}
             )}
           >
-            <source src={`/assets/magicWays/${way}/spells/${spell}.mp4`} />
+            <source src={`/MagicWorld/assets/magicWays/${way}/spells/${spell}.mp4`} />
           </video>
         ))}
         <div className='spells__description'>

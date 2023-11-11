@@ -5,6 +5,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 50px;
+
+  &__title {
+    margin-bottom: 25px;
+  }
 
   &__case {
     display: flex;
@@ -68,9 +73,12 @@
   }
 
   &__data_block {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     border: 1px solid white;
     border-radius: 15px;
-    padding: 5px;
+    padding: 10px 15px;
     height: 50px;
     margin: 5px 0px;
     position: relative;

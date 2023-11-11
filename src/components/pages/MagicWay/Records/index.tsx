@@ -13,7 +13,7 @@ const Records = (props: Props) => {
   return (
     <img
       className='records'
-      src= {`MagicWorld/assets/magicWays/${way}/records.png`}
+      src= {`/MagicWorld/assets/magicWays/${way}/records.png`}
       alt='records about magic way'
     />
   )

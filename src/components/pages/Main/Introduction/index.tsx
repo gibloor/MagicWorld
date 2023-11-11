@@ -18,10 +18,6 @@ const Introduction = () => {
         <video autoPlay loop muted playsInline className='introduction__video'>
           <source src={fonVideo} />
         </video>
-        {/* delete if have cinematic */}
-        <span className='introduction__video_explanation text_big'>
-          Of course I don't have my own cinematics
-        </span>     
       </div>
       <div className='introduction__case'>
         <div className='introduction__left'>
@@ -29,7 +25,6 @@ const Introduction = () => {
             <img src={nameGame} className='introduction__game_name' alt='name of game' />
             <img src={gameSymbol} className='introduction__game_symbol' alt='game symbol' />
           </div>
-          {/* change on click if game exist */}
           {osName === 'Mac OS' &&
             <a
               className='button_casual text_title'
@@ -51,7 +46,6 @@ const Introduction = () => {
             </span>
           }
         </div>
-        {/* change on click if game exist */}
         <span className='text_big introduction__big-text'>
           {t('main.introduction.big-text')}
         </span>
