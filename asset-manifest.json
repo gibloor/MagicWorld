@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MagicWorld/static/css/main.fe295f3f.css",
-    "main.js": "/MagicWorld/static/js/main.a8dd440b.js",
+    "main.css": "/MagicWorld/static/css/main.9b4d062c.css",
+    "main.js": "/MagicWorld/static/js/main.2e8a46b6.js",
     "static/media/fonVideo.mp4": "/MagicWorld/static/media/fonVideo.7047d9be714e8b407886.mp4",
     "static/media/portal.gif": "/MagicWorld/static/media/portal.d67c22c719b962a3c849.gif",
     "static/media/fon.jpeg": "/MagicWorld/static/media/fon.aa5e10010b1f701171e5.jpeg",
@@ -16,11 +16,11 @@
     "static/media/frame.png": "/MagicWorld/static/media/frame.332a7bfe3e86336ea6b2.png",
     "index.html": "/MagicWorld/index.html",
     "static/media/getFetch.cjs": "/MagicWorld/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.fe295f3f.css.map": "/MagicWorld/static/css/main.fe295f3f.css.map",
-    "main.a8dd440b.js.map": "/MagicWorld/static/js/main.a8dd440b.js.map"
+    "main.9b4d062c.css.map": "/MagicWorld/static/css/main.9b4d062c.css.map",
+    "main.2e8a46b6.js.map": "/MagicWorld/static/js/main.2e8a46b6.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe295f3f.css",
-    "static/js/main.a8dd440b.js"
+    "static/css/main.9b4d062c.css",
+    "static/js/main.2e8a46b6.js"
   ]
 }
