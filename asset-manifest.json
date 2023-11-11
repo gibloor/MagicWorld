@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.9b4d062c.css",
-    "main.js": "/static/js/main.06499a54.js",
-    "static/media/fonVideo.mp4": "/static/media/fonVideo.7047d9be714e8b407886.mp4",
-    "static/media/portal.gif": "/static/media/portal.d67c22c719b962a3c849.gif",
-    "static/media/fon.jpeg": "/static/media/fon.aa5e10010b1f701171e5.jpeg",
-    "static/media/landscape.jpg": "/static/media/landscape.03a77686bdf717c4cf57.jpg",
-    "static/media/planet.jpg": "/static/media/planet.8061863eb9a593e90bc5.jpg",
-    "static/media/goldRoom.jpeg": "/static/media/goldRoom.1d1d39876230d8adf9f1.jpeg",
-    "static/media/leftDoor.png": "/static/media/leftDoor.f0d1a1f9b8b3b3b708ab.png",
-    "static/media/rightDoor.png": "/static/media/rightDoor.d94d764e42c8dd07d4d0.png",
-    "static/media/baseRoad.png": "/static/media/baseRoad.43e96618f369eec7cdbb.png",
-    "static/media/newsPicture.png": "/static/media/newsPicture.86e638d5a0234dd84add.png",
-    "static/media/caster.jpg": "/static/media/caster.4c73db0919bf176144b2.jpg",
-    "static/media/frame.png": "/static/media/frame.332a7bfe3e86336ea6b2.png",
-    "index.html": "/index.html",
-    "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.9b4d062c.css.map": "/static/css/main.9b4d062c.css.map",
-    "main.06499a54.js.map": "/static/js/main.06499a54.js.map"
+    "main.css": "MagicWorld/static/css/main.9dd80125.css",
+    "main.js": "MagicWorld/static/js/main.771a358d.js",
+    "static/media/fonVideo.mp4": "MagicWorld/static/media/fonVideo.7047d9be714e8b407886.mp4",
+    "static/media/portal.gif": "MagicWorld/static/media/portal.d67c22c719b962a3c849.gif",
+    "static/media/fon.jpeg": "MagicWorld/static/media/fon.aa5e10010b1f701171e5.jpeg",
+    "static/media/landscape.jpg": "MagicWorld/static/media/landscape.03a77686bdf717c4cf57.jpg",
+    "static/media/planet.jpg": "MagicWorld/static/media/planet.8061863eb9a593e90bc5.jpg",
+    "static/media/goldRoom.jpeg": "MagicWorld/static/media/goldRoom.1d1d39876230d8adf9f1.jpeg",
+    "static/media/leftDoor.png": "MagicWorld/static/media/leftDoor.f0d1a1f9b8b3b3b708ab.png",
+    "static/media/rightDoor.png": "MagicWorld/static/media/rightDoor.d94d764e42c8dd07d4d0.png",
+    "static/media/baseRoad.png": "MagicWorld/static/media/baseRoad.43e96618f369eec7cdbb.png",
+    "static/media/newsPicture.png": "MagicWorld/static/media/newsPicture.86e638d5a0234dd84add.png",
+    "static/media/caster.jpg": "MagicWorld/static/media/caster.4c73db0919bf176144b2.jpg",
+    "static/media/frame.png": "MagicWorld/static/media/frame.332a7bfe3e86336ea6b2.png",
+    "index.html": "MagicWorld/index.html",
+    "static/media/getFetch.cjs": "MagicWorld/static/media/getFetch.40f37ddea2378391108f.cjs",
+    "main.9dd80125.css.map": "MagicWorld/static/css/main.9dd80125.css.map",
+    "main.771a358d.js.map": "MagicWorld/static/js/main.771a358d.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b4d062c.css",
-    "static/js/main.06499a54.js"
+    "static/css/main.9dd80125.css",
+    "static/js/main.771a358d.js"
   ]
 }

@@ -9,10 +9,6 @@
     "auth": {
       "sign-in": "Sign in",
       "sign-up": "Sign up"
-    },
-    "langs": {
-      "en": "english",
-      "ru": "russian"
     }
   },
 
