@@ -40,7 +40,7 @@ const ShortInfo = () => {
             {'short-info__location_new': index === locationNum},
             {'short-info__location_old': index === locationNum - 1 || (locationNum === 0 && index === locations.length - 1)},
           )}
-          src={`${process.env.PUBLIC_URL}/assets/gameContent/locations/${location}.jpg`}
+          src={`MagicWorld/assets/gameContent/locations/${location}.jpg`}
         />
       ))}
     </div>

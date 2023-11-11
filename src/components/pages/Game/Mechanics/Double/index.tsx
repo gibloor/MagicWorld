@@ -35,11 +35,11 @@ const Double = (props: Props) => {
   return (
       <div className='double'>
         <img
-          src={`${process.env.PUBLIC_URL}/assets/game/mechanics/${name}-first.jpg`}
+          src={`MagicWorld/assets/game/mechanics/${name}-first.jpg`}
           className='mechanics__picture double__picture'
         />
         <img
-          src={`${process.env.PUBLIC_URL}/assets/game/mechanics/${name}-second.jpg`}
+          src={`MagicWorld/assets/game/mechanics/${name}-second.jpg`}
           className='mechanics__picture double__picture'
           style={{
             clipPath: `polygon(${shift}% 100%, ${shift}% 0%, 100% 0%, 100% 100%)`

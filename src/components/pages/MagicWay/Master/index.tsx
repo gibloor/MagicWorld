@@ -22,7 +22,7 @@ const Master = (props: Props) => {
       </div>
       <img
         className='master__picture'
-        src= {`${process.env.PUBLIC_URL}/assets/magicWays/${way}/master.png`}
+        src= {`MagicWorld/assets/magicWays/${way}/master.png`}
       />
     </div>
   )

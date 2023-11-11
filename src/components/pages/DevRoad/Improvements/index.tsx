@@ -66,9 +66,9 @@ const Improvements = () => {
 
               <div className='improvements__step' onClick={() => changeStep(index)}>
                 <div className='improvements__picture_block'>
-                  <img src={`${process.env.PUBLIC_URL}/assets/devRoad/improvements/step-${index}.png`} className='improvements__picture' />
+                  <img src={`MagicWorld/assets/devRoad/improvements/step-${index}.png`} className='improvements__picture' />
                   <img
-                    src={`${process.env.PUBLIC_URL}/assets/devRoad/improvements/step-${index}-blackout.png`}
+                    src={`MagicWorld/assets/devRoad/improvements/step-${index}-blackout.png`}
                     className={classNames(
                       {'improvements__picture improvements__blackout': true},
                       {'improvements__blackout_show': slide < index && prevSlide > index},

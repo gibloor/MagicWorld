@@ -39,12 +39,12 @@ const SpellsFactors = () => {
                 )}
               >
                 <img
-                  src={`${process.env.PUBLIC_URL}/assets/game/spells-factors/silhouette/${showSection}.png`}
+                  src={`MagicWorld/assets/game/spells-factors/silhouette/${showSection}.png`}
                   className='spells-factors__silhouette spells-factors__silhouette_basic'
                 />
                 {section.aspects.map(aspect => (
                   <img key={aspect}
-                    src={`${process.env.PUBLIC_URL}/assets/game/spells-factors/silhouette/${aspect}.png`}
+                    src={`MagicWorld/assets/game/spells-factors/silhouette/${aspect}.png`}
                     className={classNames(
                       {'spells-factors__silhouette': true},
                       {'spells-factors__silhouette_standout': aspect === showSilhouette}
@@ -70,7 +70,7 @@ const SpellsFactors = () => {
                   }}
                 >
                   <img
-                    src={`${process.env.PUBLIC_URL}/assets/game/spells-factors/icons/${aspect}.png`}
+                    src={`MagicWorld/assets/game/spells-factors/icons/${aspect}.png`}
                     className={classNames(
                       {'spells-factors__data_icon': true},
                     )}
