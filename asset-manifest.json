@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MagicWorld/static/css/main.8255685b.css",
-    "main.js": "/MagicWorld/static/js/main.3cdeb386.js",
+    "main.css": "/MagicWorld/static/css/main.50d0b138.css",
+    "main.js": "/MagicWorld/static/js/main.43832a65.js",
     "static/media/fonVideo.mp4": "/MagicWorld/static/media/fonVideo.7047d9be714e8b407886.mp4",
     "static/media/portal.gif": "/MagicWorld/static/media/portal.d67c22c719b962a3c849.gif",
     "static/media/fon.jpeg": "/MagicWorld/static/media/fon.aa5e10010b1f701171e5.jpeg",
@@ -16,13 +16,15 @@
     "static/media/frame.png": "/MagicWorld/static/media/frame.332a7bfe3e86336ea6b2.png",
     "static/media/rikka-rolling.gif": "/MagicWorld/static/media/rikka-rolling.25474748aa27ecb832ca.gif",
     "static/media/megu-rolling.gif": "/MagicWorld/static/media/megu-rolling.5b3ba0f2a91ed57bf185.gif",
+    "static/media/close.svg": "/MagicWorld/static/media/close.1cf684e736176904ee16931bb7b4051a.svg",
     "index.html": "/MagicWorld/index.html",
+    "static/media/menu.svg": "/MagicWorld/static/media/menu.147013ca072334d8d51979dce66ab2a9.svg",
     "static/media/getFetch.cjs": "/MagicWorld/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.8255685b.css.map": "/MagicWorld/static/css/main.8255685b.css.map",
-    "main.3cdeb386.js.map": "/MagicWorld/static/js/main.3cdeb386.js.map"
+    "main.50d0b138.css.map": "/MagicWorld/static/css/main.50d0b138.css.map",
+    "main.43832a65.js.map": "/MagicWorld/static/js/main.43832a65.js.map"
   },
   "entrypoints": [
-    "static/css/main.8255685b.css",
-    "static/js/main.3cdeb386.js"
+    "static/css/main.50d0b138.css",
+    "static/js/main.43832a65.js"
   ]
 }
