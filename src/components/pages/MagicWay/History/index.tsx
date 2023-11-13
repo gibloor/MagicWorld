@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import classNames from 'classnames';
+import React, { useState } from 'react'
+import classNames from 'classnames'
 
-import './styles.scss';
+import './styles.scss'
 
 interface Props {
   way?: string,
 }
 
 const History = (props: Props) => {
-  const { way } = props;
+  const { way } = props
 
-  const [itemShown, setItemShown] = useState(0);
+  const [itemShown, setItemShown] = useState(0)
 
-  const items = ['start', 'facts', 'popularity'];
+  const items = ['start', 'facts', 'popularity']
 
   const changeItem = (index:number) => {
-    setItemShown(index);
+    setItemShown(index)
   }
 
   return (
@@ -50,4 +50,4 @@ const History = (props: Props) => {
   )
 }
 
-export default History;
+export default History

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import classNames from 'classnames';
+import React, { useEffect, useState } from 'react'
+import classNames from 'classnames'
 
-import './styles.scss';
+import './styles.scss'
 
 const ShortInfo = () => {
 
@@ -10,25 +10,21 @@ const ShortInfo = () => {
     'forest',
     'skull',
     'lava',
-  ];
+  ]
 
-  const [locationNum, setLocationNum] = useState(0);
+  const [locationNum, setLocationNum] = useState(0)
 
   useEffect(() => {
-    let newNum: number
+    let newNum = locationNum
 
-    if (locationNum < locations.length - 1) {
-      newNum = locationNum + 1
-    } else {
-      newNum = 0
-    }
+    locationNum < locations.length - 1 ? newNum += 1 : newNum = 0
     
     const locationTimer = setTimeout(() => {
       setLocationNum(newNum)
     }, 6000)
 
     return () => clearTimeout(locationTimer)
-  }, [locationNum]);
+  }, [locationNum])
 
   return (
     <div className='short-info'>
@@ -47,4 +43,4 @@ const ShortInfo = () => {
   )
 }
 
-export default ShortInfo;
+export default ShortInfo

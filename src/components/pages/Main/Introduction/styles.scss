@@ -40,17 +40,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
   }
 
   &__game_marks {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    gap: 25px;
   }
 
   &__game_name {
     height: 200px;
-    margin-right: 25px;
   }
 
   &__game_symbol {
@@ -59,5 +59,39 @@
 
   &__big-text {
     white-space: pre-line;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .introduction {
+    &__game_name {
+      height: 150px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .introduction {
+    &__big-text {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .introduction {
+    &__game_name {
+      height: auto;
+      max-height: 150px;
+      max-width: calc(90% - 100px);
+    }
+
+    &__game_marks {
+      justify-content: center;
+    }
+
+    &__left {
+      margin: 0 30px;
+    }
   }
 }

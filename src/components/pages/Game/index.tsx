@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-import SpellsFactors from './SpellsFactors';
-import FightStage from './FightStage';
-import Legend from './Legend';
-import Mechanics from './Mechanics';
+import SpellsFactors from './SpellsFactors'
+import FightStage from './FightStage'
+import Legend from './Legend'
+import Mechanics from './Mechanics'
 
-import './styles.scss';
+import './styles.scss'
 
 const Game = () => {
 
@@ -19,4 +19,4 @@ const Game = () => {
   )
 }
 
-export default Game;
+export default Game

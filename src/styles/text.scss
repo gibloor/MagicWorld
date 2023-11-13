@@ -11,3 +11,19 @@
 .text_little {
   font-size: 14pt;
 }
+
+
+@media screen and (max-width: 1100px) {
+  .text_big {
+    font-size: 35pt;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .text_title {
+    font-size: 18pt;
+  }
+
+  .text_big {
+  }
+}

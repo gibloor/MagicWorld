@@ -1,14 +1,14 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
-import Double from './Double';
-import mechanics from './mechanics';
+import Double from './Double'
+import mechanics from './mechanics'
 
-import './styles.scss';
+import './styles.scss'
 
 const Mechanics = () => {
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <div className='mechanics'>
@@ -33,6 +33,6 @@ const Mechanics = () => {
       </div>
     </div>
   )
-};
+}
 
-export default Mechanics;
+export default Mechanics

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-import Introduction from './Introduction';
-import ActualNews from './ActualNews';
-import ShortInfo from './ShortInfo';
-import Advertising from './Advertising';
+import Introduction from './Introduction'
+import ActualNews from './ActualNews'
+import ShortInfo from './ShortInfo'
+import Advertising from './Advertising'
 
-import './styles.scss';
+import './styles.scss'
 
 const Main = () => {
   
@@ -19,4 +19,4 @@ const Main = () => {
   )
 }
 
-export default Main;
+export default Main

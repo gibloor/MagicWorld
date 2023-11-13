@@ -1,18 +1,18 @@
-import React, { StrictMode } from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { StrictMode } from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import './i18n';
-import App from './App';
-import Main from 'components/pages/Main';
-import Game from 'components/pages/Game';
-import MagicWays from 'components/pages/MagicWays';
-import MagicWay from 'components/pages/MagicWay';
-import DevRoad from 'components/pages/DevRoad';
+import './i18n'
+import App from './App'
+import Main from 'components/pages/Main'
+import Game from 'components/pages/Game'
+import MagicWays from 'components/pages/MagicWays'
+import MagicWay from 'components/pages/MagicWay'
+import DevRoad from 'components/pages/DevRoad'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
-);
+)
 
 root.render(
   <StrictMode>
@@ -36,4 +36,4 @@ root.render(
       </Routes>
     </BrowserRouter>
   </StrictMode>
-);
+)

@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-import classNames from 'classnames';
+import React, { useEffect, useRef, useState } from "react"
+import classNames from 'classnames'
 
-import frame from 'components/assets/magicWays/doors/frame.png';
-import leftDoor from 'components/assets/magicWays/doors/leftDoor.png';
-import rightDoor from 'components/assets/magicWays/doors/rightDoor.png';
-import portal from 'components/assets/magicWays/doors/portal.gif';
+import frame from 'components/assets/magicWays/doors/frame.png'
+import leftDoor from 'components/assets/magicWays/doors/leftDoor.png'
+import rightDoor from 'components/assets/magicWays/doors/rightDoor.png'
+import portal from 'components/assets/magicWays/doors/portal.gif'
 
-import './styles.scss';
+import './styles.scss'
 
 interface Props {
   getMoovIn: () => void
@@ -14,23 +14,23 @@ interface Props {
 
 const Doors = (props:Props) => {
 
-  const ref = useRef<HTMLDivElement>(null);
-  const [doorRef, setDoorRef] = useState<HTMLDivElement | null>(null);
-  const [offset, setOffset] = useState(0);
+  const ref = useRef<HTMLDivElement>(null)
+  const [doorRef, setDoorRef] = useState<HTMLDivElement | null>(null)
+  const [offset, setOffset] = useState(0)
 
-  const { getMoovIn } = props;
+  const { getMoovIn } = props
 
   const handleScroll = () => {
     if (doorRef) {
       setOffset(doorRef.scrollTop)
     }
-  };
+  }
 
   useEffect(() => {
     if (offset > 450) {
       getMoovIn() 
     }
-  }, [offset]);
+  }, [offset])
 
   useEffect(() => {
     setDoorRef(ref.current)
@@ -39,7 +39,7 @@ const Doors = (props:Props) => {
     return function removeScroll() {
       ref.current?.removeEventListener("scroll", handleScroll)
     }
-  }, [handleScroll]);
+  }, [handleScroll])
 
   return (
     <div
@@ -68,6 +68,6 @@ const Doors = (props:Props) => {
       </div>
     </div>
   )
-};
+}
 
-export default Doors;
+export default Doors

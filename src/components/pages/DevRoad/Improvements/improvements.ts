@@ -8,6 +8,6 @@ const improvements = [
   'return-to-making-game',
   'check-what-noone-care',
   'start-make-wood-toys',
-];
+]
 
-export default improvements;
+export default improvements

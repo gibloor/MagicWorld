@@ -17,4 +17,4 @@ const mechanics = [
   },
 ]
 
-export default mechanics;
+export default mechanics

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import './styles.scss';
+import './styles.scss'
 
 interface Props {
   way?: string
@@ -8,7 +8,7 @@ interface Props {
 
 const Records = (props: Props) => {
 
-  const { way } = props;
+  const { way } = props
 
   return (
     <img
@@ -19,4 +19,4 @@ const Records = (props: Props) => {
   )
 }
 
-export default Records;
+export default Records

@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-import classNames from 'classnames';
+import React, { useState } from 'react'
+import classNames from 'classnames'
 
-import './styles.scss';
+import './styles.scss'
 
 interface Props {
   way?: string,
 }
 
 const Spells = (props: Props) => {
-  const { way } = props;
+  const { way } = props
 
-  const spells = ['release', 'overpower'];
-  const [showSpell, setShowSpell] = useState(0);
-  const [hideSpell, setHideSpell] = useState<number>();
+  const spells = ['release', 'overpower']
+  const [showSpell, setShowSpell] = useState(0)
+  const [hideSpell, setHideSpell] = useState<number>()
 
   const changeSpell = (index:number) => {
     if (index !== showSpell) {
       setHideSpell(showSpell)
       setShowSpell(index)
     }
-  };
+  }
 
   return (
     <div className='spells'>
@@ -64,6 +64,6 @@ const Spells = (props: Props) => {
       </div>
     </div>
   )
-};
+}
 
-export default Spells;
+export default Spells

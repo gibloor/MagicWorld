@@ -1,19 +1,14 @@
-.button_casual {
-  opacity: 0.85;
-  padding: 15px;
-  border: 2px solid white;
-  border-radius: 10px;
-}
-.button_casual:hover {
-  opacity: 1;
-}
-.button_little {
+.button {
   cursor: pointer;
   border-radius: 25px;
+  color: white;
   border: 1px solid white;
+  background-color: transparent;
+  padding: 10px 15px;
+  font-size: 12pt;
 }
 
-.button_little:hover {
+.button:hover {
   animation-direction: normal;
   animation: discoloration 0.4s forwards;
 }

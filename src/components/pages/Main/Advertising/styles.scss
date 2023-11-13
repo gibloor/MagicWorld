@@ -1,15 +1,12 @@
-$width: 1200px;
-$height: 600px;
-
 .advertising {
   width: 100%;
-  height: $height;
+  height: 600px;
   padding: 10px 0px;
   display: flex;
   justify-content: center;
 
   &__case {
-    width: 60%;
+    width: 1200px;
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -18,18 +15,19 @@ $height: 600px;
   }
 
   &__room {
-    width: $width;
-    height: $height;
+    width: 1200px;
+    height: 600px;
     position: absolute;
     z-index: -1;
   }
 
   &__cost {
-    width: calc(30px * 10);
-    height: 70%;
+    width: 350px;
+    height: 400px;
     display: flex;
     flex-direction: column-reverse;
     flex-wrap: wrap;
+    margin-bottom: 150px;
   }
 
   &__gold_floor {
@@ -43,13 +41,13 @@ $height: 600px;
   }
 
   &__gold_animation {
-    animation: goldDrop 0.5s forwards;
+    animation: goldDrop 0.25s forwards;
     position: absolute;
     opacity: 0;
   }
 
   &__gold_hide {
-    animation: goldDrop 0.5s forwards, goldHide 0.5s forwards;
+    animation: goldDrop 0.25s forwards, goldHide 0.25s forwards;
   }
 
   &__product {
@@ -59,6 +57,7 @@ $height: 600px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 10px;
   }
 
   &__product_picture {
@@ -69,8 +68,8 @@ $height: 600px;
   &__product_cost {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 40%;
+    justify-content: center;
+    gap: 20px
   }
 }
 
@@ -93,5 +92,44 @@ $height: 600px;
   100% {
     opacity: 0;
     transform: translateY(-50%);
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .advertising {
+    height: 50vw;
+
+    &__case {
+      width: 100%;
+    }
+
+    &__room {
+      width: 100%;
+      height: 50vw;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .advertising {
+    &__cost {
+      width: 250px;
+      height: 300px;
+    }
+
+    &__gold_floor {
+      height: 20px;
+    }
+
+    &__gold {
+      width: 30px;
+      height: 20px;
+    }
+
+    &__product {
+      margin: 10px;
+      width: 30%;
+    }
   }
 }

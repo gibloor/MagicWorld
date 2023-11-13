@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import baseRoad from 'components/assets/magicWays/pedestals/baseRoad.png';
-import fon from 'components/assets/magicWays/pedestals/fon.jpeg';
+import baseRoad from 'components/assets/magicWays/pedestals/baseRoad.png'
+import fon from 'components/assets/magicWays/pedestals/fon.jpeg'
 
-import './styles.scss';
+import './styles.scss'
 
 const Pedestals = () => {
 
@@ -16,7 +16,7 @@ const Pedestals = () => {
     'cyan',
     'blue',
     'violet'
-  ];
+  ]
   
   return (
     <div className='pedestals'>
@@ -34,6 +34,6 @@ const Pedestals = () => {
       <img src={baseRoad} className='pedestals__base-roads'/>
     </div>
   )
-};
+}
 
-export default Pedestals;
+export default Pedestals

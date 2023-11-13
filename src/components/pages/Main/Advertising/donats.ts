@@ -15,6 +15,6 @@ const donats = [
     title: 'pixels',
     cost: 10,
   },
-];
+]
 
-export default donats;
+export default donats

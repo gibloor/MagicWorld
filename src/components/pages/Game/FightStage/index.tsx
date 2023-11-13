@@ -1,41 +1,41 @@
-import React, { useEffect, useRef, useState } from "react";
-import classNames from "classnames";
-import { useTranslation } from "react-i18next";
+import React, { useEffect, useRef, useState } from "react"
+import classNames from "classnames"
+import { useTranslation } from "react-i18next"
 
-import interfaceItems from "./interfaceItems";
+import interfaceItems from "./interfaceItems"
 
-import './styles.scss';
+import './styles.scss'
 
 const FightStage = () => {
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null)
 
-  const [position, setPosition] = useState(0);
-  const [height, setHeight] = useState(0);
+  const [position, setPosition] = useState(0)
+  const [height, setHeight] = useState(0)
 
   const checkScroll = () => {
-    const blockPos = ref.current?.getBoundingClientRect().y || 0;
-    setPosition(blockPos);
-  };
+    const blockPos = ref.current?.getBoundingClientRect().y || 0
+    setPosition(blockPos)
+  }
 
   useEffect(() => {
-    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('scroll', checkScroll)
   
     return () => {
-      window.removeEventListener('scroll', checkScroll);
+      window.removeEventListener('scroll', checkScroll)
     }
 
-  }, []);
+  }, [])
 
   useEffect(() => {
-    const blockHeight = ref.current?.offsetHeight;
+    const blockHeight = ref.current?.offsetHeight
 
     if (blockHeight) {
-      setHeight(blockHeight - window.innerHeight);
+      setHeight(blockHeight - window.innerHeight)
     }
-  }, []);
+  }, [])
 
   return (
     <div ref={ref} className='fightstage'>
@@ -71,6 +71,6 @@ const FightStage = () => {
       </div>
     </div>
   )
-};
+}
 
-export default FightStage;
+export default FightStage

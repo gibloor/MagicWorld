@@ -11,6 +11,6 @@ const factors = [
     name: 'mind',
     aspects: ['reading speed'],
   },
-];
+]
 
-export default factors;
+export default factors

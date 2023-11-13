@@ -1,16 +1,13 @@
-$locationWidth: 1200px;
-$locationHeight: 600px;
-
 .short-info {
   width: 100%;
-  height: $locationHeight;
+  height: 600px;
   display: flex;
   justify-content: center;
   position: relative;
 
   &__location {
-    width: $locationWidth;
-    height: $locationHeight;
+    width: 1200px;
+    height: 600px;
     position: absolute;
     z-index: 5;
   }
@@ -31,6 +28,17 @@ $locationHeight: 600px;
   
     100% {
       clip-path: polygon(0% 200%, 200% 0%, 200% 0%, 200% 200%, 0% 200%);
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .short-info {
+    height: 50vw;
+    
+    &__location {
+      width: 100%;
+      height: 50vw;
     }
   }
 }

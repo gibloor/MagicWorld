@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import Improvements from './Improvements';
+import Improvements from './Improvements'
 
-import './styles.scss';
+import './styles.scss'
 
 const devRoad = () => {
 
@@ -19,4 +19,4 @@ const devRoad = () => {
   )
 }
 
-export default devRoad;
+export default devRoad

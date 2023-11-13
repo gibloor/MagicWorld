@@ -1,16 +1,16 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react'
+import { useParams } from 'react-router-dom'
 
-import Records from './Records';
-import Master from './Master';
-import Spells from './Spells';
-import History from './History';
+import Records from './Records'
+import Master from './Master'
+import Spells from './Spells'
+import History from './History'
 
-import './styles.scss';
+import './styles.scss'
 
 const MagicWay = () => {
 
-  const { way } = useParams();
+  const { way } = useParams()
 
   return (
     <div className='magic-way'>
@@ -22,4 +22,4 @@ const MagicWay = () => {
   )
 }
 
-export default MagicWay;
+export default MagicWay

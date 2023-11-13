@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { keyframes, css } from 'styled-components';
+import React from 'react'
+import styled, { keyframes, css } from 'styled-components'
 
 interface MoveProps {
   startPos: number,
@@ -13,20 +13,20 @@ interface AnimationProps extends MoveProps {
 
 const move = (props: MoveProps) => keyframes`
   0% {
-    transform: translateX(${props.startPos}px);
+    transform: translateX(${props.startPos}px)
   }
   100% {
-    transform: translateX(${props.finishPos}px);
+    transform: translateX(${props.finishPos}px)
   }
-`;
+`
 
 const animation = (props: AnimationProps) =>
   css`
-    ${move} ${props.duration}s linear forwards;
+    ${move} ${props.duration}s linear forwards
   `
 const AnimatedCircle = styled.div<AnimationProps>`
-  animation: ${animation};
-  left: ${props => `${props.staticPos}px`};
-`;
+  animation: ${animation}
+  left: ${props => `${props.staticPos}px`}
+`
 
-export default AnimatedCircle;
+export default AnimatedCircle

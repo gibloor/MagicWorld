@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import './styles.scss';
+import './styles.scss'
 
 interface Props {
   way?: string,
@@ -8,7 +8,7 @@ interface Props {
 
 const Master = (props: Props) => {
 
-  const { way } = props;
+  const { way } = props
 
   return (
     <div className='master'>
@@ -28,4 +28,4 @@ const Master = (props: Props) => {
   )
 }
 
-export default Master;
+export default Master

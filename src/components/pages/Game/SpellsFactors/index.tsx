@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import classNames from 'classnames';
+import React, { useState } from 'react'
+import classNames from 'classnames'
 
-import factors from './factors';
+import factors from './factors'
  
-import './styles.scss';
+import './styles.scss'
 
 const SpellsFactors = () => {
 
-  const [showSection, setShowSection] = useState(factors[0].name);
+  const [showSection, setShowSection] = useState(factors[0].name)
   const [showSilhouette, setShowSilhouette] = useState('')
 
   return (
@@ -90,6 +90,6 @@ const SpellsFactors = () => {
 
     </div>
   )
-};
+}
 
-export default SpellsFactors;
+export default SpellsFactors

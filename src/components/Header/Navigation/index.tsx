@@ -1,13 +1,13 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
-import pages from './pages';
+import pages from './pages'
 
-import './styles.scss';
+import './styles.scss'
 
 const Navigation = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <div className='navigation'>
@@ -22,4 +22,4 @@ const Navigation = () => {
   )
 }
 
-export default Navigation;
+export default Navigation

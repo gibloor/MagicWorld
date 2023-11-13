@@ -1,19 +1,24 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import classNames from 'classnames';
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+import classNames from 'classnames'
 
-import planet from 'components/assets/header/planet.png';
+import planet from 'components/assets/header/planet.png'
 
-import './styles.scss';
+import './styles.scss'
 
 const LangChanger = () => {
-
-  const { i18n } = useTranslation();
+  const { i18n } = useTranslation()
 
   const langs = [
-    'en',
-    'pl',
-  ];
+    {
+      lang: 'en',
+      name: 'English',
+    },
+    {
+      lang: 'pl',
+      name: 'Polish',
+    },
+  ]
 
   return (
     <div className='lang-changer'>
@@ -21,14 +26,14 @@ const LangChanger = () => {
       <div className='lang-changer__window_case'>
         <div className='lang-changer__window'>
           {langs.map(lang => (
-            <span key={lang}
-              onClick={() => i18n.changeLanguage(lang)}
+            <span key={lang.lang}
+              onClick={() => i18n.changeLanguage(lang.lang)}
               className={classNames(
                 {'lang-changer__lang': true},
-                {'lang-changer__lang_selected': i18n.language === lang}
+                {'lang-changer__lang_selected': i18n.language === lang.lang}
               )}
             >
-              {lang}
+              {lang.name}
             </span>
           ))}
         </div>
@@ -37,4 +42,4 @@ const LangChanger = () => {
   )
 }
 
-export default LangChanger;
+export default LangChanger

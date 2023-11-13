@@ -1,20 +1,20 @@
-import React, { MutableRefObject } from 'react';
+import React, { MutableRefObject } from 'react'
 
-import AnimatedLine from './AnimatedLine';
+import AnimatedLine from './AnimatedLine'
 
 interface Props {
-  slidesRef: MutableRefObject<Array<HTMLDivElement | null>>;
-  duration: number;
-  prevWidth: number;
-  finishWidth: number;
+  slidesRef: MutableRefObject<Array<HTMLDivElement | null>>
+  duration: number
+  prevWidth: number
+  finishWidth: number
 }
 
 const Line = (props: Props) => {
 
-  const { slidesRef, duration, prevWidth, finishWidth } = props;
+  const { slidesRef, duration, prevWidth, finishWidth } = props
 
-  const firstSegment = slidesRef.current[0]?.offsetWidth || 0;
-  const margin = firstSegment / 2;
+  const firstSegment = slidesRef.current[0]?.offsetWidth || 0
+  const margin = firstSegment / 2
 
   return (
     <AnimatedLine className='improvements__line' duration={duration} margin={margin} prevWidth={prevWidth} finishWidth={finishWidth} />
@@ -23,4 +23,4 @@ const Line = (props: Props) => {
 
 
 
-export default Line;
+export default Line

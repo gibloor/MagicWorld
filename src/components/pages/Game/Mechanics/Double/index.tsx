@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react'
 
-import './styles.scss';
+import './styles.scss'
 
 interface Props {
   name: string
@@ -8,29 +8,29 @@ interface Props {
 
 const Double = (props: Props) => {
 
-  const { name } = props;
+  const { name } = props
 
-  const ref = useRef<HTMLDivElement | null>(null);
-  const mouseDown = useRef<boolean>(false);
+  const ref = useRef<HTMLDivElement | null>(null)
+  const mouseDown = useRef<boolean>(false)
 
-  const [shift, setShift] = useState(50);
+  const [shift, setShift] = useState(50)
 
   const dragMove = (event: MouseEvent) => {
-    const divPos = ref.current?.getBoundingClientRect().x || 0;
-    const divSize = ref.current?.offsetWidth || 0;
+    const divPos = ref.current?.getBoundingClientRect().x || 0
+    const divSize = ref.current?.offsetWidth || 0
 
     if (mouseDown.current) {
       setShift(Math.round((event.screenX - divPos - 2) / divSize * 100))
     }
-  };
+  }
 
   useEffect(() => {
-    window.addEventListener('mousemove', dragMove);
+    window.addEventListener('mousemove', dragMove)
 
     return () => {
-      window.removeEventListener('mousemove', dragMove);
+      window.removeEventListener('mousemove', dragMove)
     }
-  }, []);
+  }, [])
 
   return (
       <div className='double'>
@@ -65,4 +65,4 @@ const Double = (props: Props) => {
   )
 }
 
-export default Double;
+export default Double

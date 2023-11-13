@@ -1,19 +1,19 @@
-import React from 'react';
-import { useInView } from 'react-hook-inview';
-import { useTranslation } from 'react-i18next';
+import React from 'react'
+import { useInView } from 'react-hook-inview'
+import { useTranslation } from 'react-i18next'
 
-import planet from 'components/assets/game/planet.jpg';
-import landscape from 'components/assets/game/landscape.jpg';
-import caster from 'components/assets/game/caster.jpg';
+import planet from 'components/assets/game/planet.jpg'
+import landscape from 'components/assets/game/landscape.jpg'
+import caster from 'components/assets/game/caster.jpg'
 
-import './styles.scss';
+import './styles.scss'
 
 const Legend = () => {
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
-  const [landscapeRef, landscapeView] = useInView({unobserveOnEnter: true});
-  const [casterRef, casterView] = useInView({unobserveOnEnter: true});
+  const [landscapeRef, landscapeView] = useInView({unobserveOnEnter: true})
+  const [casterRef, casterView] = useInView({unobserveOnEnter: true})
 
   return (
     <div className='legend'>
@@ -51,6 +51,6 @@ const Legend = () => {
       </div>
     </div>
   )
-};
+}
 
-export default Legend;
+export default Legend

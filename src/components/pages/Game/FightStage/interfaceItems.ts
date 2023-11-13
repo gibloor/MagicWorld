@@ -13,4 +13,4 @@ const interfaceItems = [
   },
 ]
 
-export default interfaceItems;
+export default interfaceItems

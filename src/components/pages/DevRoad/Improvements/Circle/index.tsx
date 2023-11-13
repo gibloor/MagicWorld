@@ -1,16 +1,16 @@
-import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
+import React, { MutableRefObject, useEffect, useRef, useState } from 'react'
 
-import AnimatedCircle from './AnimatedCircle';
+import AnimatedCircle from './AnimatedCircle'
 
 interface Props {
-  slide: number;
-  prevSlide: number;
-  slidesRef: MutableRefObject<(HTMLDivElement | null)[]>;
-  duration: number;
-  startPos: number;
-  finishPos: number;
-  changeStart: (long:number) => void;
-  changeFinish: (long:number) => void;
+  slide: number
+  prevSlide: number
+  slidesRef: MutableRefObject<(HTMLDivElement | null)[]>
+  duration: number
+  startPos: number
+  finishPos: number
+  changeStart: (long:number) => void
+  changeFinish: (long:number) => void
 }
 
 const Circle = (props: Props) => {
@@ -24,20 +24,20 @@ const Circle = (props: Props) => {
     finishPos,
     changeStart,
     changeFinish
-  } = props;
+  } = props
 
-  const [staticPos, setStaticPos] = useState(0);
+  const [staticPos, setStaticPos] = useState(0)
 
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     if (prevSlide !== slide) {
-      let newPos = finishPos;
+      let newPos = finishPos
 
       if (slide > prevSlide) {
 
         for (let i = prevSlide ; i <= slide ; i++) {
-          const width = slidesRef.current[i]?.offsetWidth;
+          const width = slidesRef.current[i]?.offsetWidth
 
           if (width) {
             if (i === 0) {
@@ -53,7 +53,7 @@ const Circle = (props: Props) => {
         }
       } else {
         for (let i = prevSlide ; i >= slide ; i--) {
-          const width = slidesRef.current[i]?.offsetWidth;
+          const width = slidesRef.current[i]?.offsetWidth
 
           if (width) {
             if (i === 0) {
@@ -69,15 +69,15 @@ const Circle = (props: Props) => {
         }
       }
 
-      changeStart(finishPos);
-      changeFinish(newPos);
+      changeStart(finishPos)
+      changeFinish(newPos)
     }
-  }, [slide]);
+  }, [slide])
 
   useEffect(() => {
-    const startPos = slidesRef.current[0]?.offsetWidth || 0;
-    setStaticPos(startPos / 2 - 25);
-  }, []);
+    const startPos = slidesRef.current[0]?.offsetWidth || 0
+    setStaticPos(startPos / 2 - 25)
+  }, [])
 
   return (
     <AnimatedCircle
@@ -91,4 +91,4 @@ const Circle = (props: Props) => {
   )
 }
 
-export default Circle;
+export default Circle

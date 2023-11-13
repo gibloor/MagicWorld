@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import Doors from './Doors';
-import Pedestals from './Pedestals';
+import Doors from './Doors'
+import Pedestals from './Pedestals'
 
-import './styles.scss';
+import './styles.scss'
 
 const MagicLib = () => {
 
-  const [moovIn, setMoovIn] = useState(false);
+  const [moovIn, setMoovIn] = useState(false)
 
   const getMoovIn = () => {
     const moovInTimer = setTimeout(() => {
       setMoovIn(true)
-    }, 1000);
+    }, 1000)
     
-    return () => clearTimeout(moovInTimer);
+    return () => clearTimeout(moovInTimer)
   }
 
   return (
@@ -25,6 +25,6 @@ const MagicLib = () => {
       }
     </div>
   )
-};
+}
 
-export default MagicLib;
+export default MagicLib

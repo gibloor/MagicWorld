@@ -1,8 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import picture from 'components/assets/temporary/newsPicture.png';
-
-import './styles.scss';
+import './styles.scss'
 
 const newsPool = [
   {
@@ -29,14 +27,14 @@ const newsPool = [
     picture: 'news-4',
     text: 'Researchers in MagicWorld report the discovery of a new magical creature. It possesses extraordinary abilities and will make an excellent companion for those who dare to tame it.'
   },
-];
+]
 
 const ActualNews = () => {
 
   return (
     <div className='actual-news'>
-      {newsPool.map(news => (
-        <div key={news.title} className='actual-news__case'>
+      {newsPool.map((news, index) => (
+        <div key={news.title} className={`actual-news__case actual-news__case-${index}`}>
           <img src={`/MagicWorld/assets/main/news/${news.picture}.jpg`} alt='about news' className='actual-news__picture'/>
           <div className='actual-news__block_case'>
             <div className='actual-news__block'>
@@ -55,6 +53,6 @@ const ActualNews = () => {
       ))}
     </div>
   )
-};
+}
 
-export default ActualNews;
+export default ActualNews
