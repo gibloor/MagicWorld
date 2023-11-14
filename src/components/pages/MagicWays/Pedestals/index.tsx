@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import baseRoad from 'components/assets/magicWays/pedestals/baseRoad.png'
-import fon from 'components/assets/magicWays/pedestals/fon.jpeg'
+import fon from 'components/assets/magicWays/pedestals/fon.jpg'
 import hover from './hover.gif'
 
 import './styles.scss'
