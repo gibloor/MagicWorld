@@ -31,7 +31,7 @@ const Header = () => {
         <div className='header__close-button_container' onClick={() => setShowMenu(!showMenu)}>
           <img className='header__close-button' src={close} />
         </div>
-        <Navigation />
+        <Navigation hideMenu={() => setShowMenu(false)} />
         <div className='header__right-side'>
           <LangChanger />
           <Authorization />

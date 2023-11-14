@@ -79,6 +79,10 @@ const Circle = (props: Props) => {
     setStaticPos(startPos / 2 - 25)
   }, [])
 
+  useEffect(() => {
+    console.log(staticPos)
+  }, [staticPos])
+
   return (
     <AnimatedCircle
       ref={ref}

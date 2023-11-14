@@ -29,6 +29,15 @@
     writing-mode: vertical-lr;
     text-orientation: upright;
     font-weight: bold;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 10px 5px;
+  }
+
+  &__button:hover {
+    animation-direction: normal;
+    animation: discoloration 0.4s forwards;
   }
 
   &__info {
@@ -41,7 +50,7 @@
     position: relative;
     height: 100%;
     width: calc(100% - 300px);
-    border: 1px solid white;
+    // border: 1px solid white;
   }
 
   &__silhouette {
@@ -65,7 +74,7 @@
   &__data {
     width: 300px;
     height: 100%;
-    border: 1px solid white;
+    // border: 1px solid white;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -82,6 +91,7 @@
     height: 50px;
     margin: 5px 0px;
     position: relative;
+    cursor: pointer;
   }
 
   &__data_block:hover &__data_description {
@@ -105,5 +115,61 @@
     padding: 5px;
     max-width: 300px;
     display: none;
+    background-color: #010522;
+    z-index: 995;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .spells-factors {
+    &__case {
+      display: flex;
+      justify-content: space-around;
+      height: 85%;
+      width: 100%;
+    }
+
+    &__silhouette_case {
+      width: calc(100% - 200px);
+    }
+
+    &__data {
+      width: auto;
+      padding: 0 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .spells-factors {
+    height: auto;
+
+    &__case {
+      height: 100%;
+    }
+
+    &__buttons {
+      justify-content: center;
+      gap: 20px;
+    }
+
+    &__info {
+      height: auto;
+    }
+
+    &__data {
+      padding: 0;
+      align-items: flex-end;
+      justify-content: center;
+      flex: 1;
+    }
+
+    &__silhouette {
+      height: auto;
+      max-height: 40vh;
+      width: auto;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
   }
 }

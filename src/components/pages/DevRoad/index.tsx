@@ -8,7 +8,7 @@ const devRoad = () => {
 
   return (
     <div className='dev-road'>
-      <span>
+      <span className='text_title'>
         Plan on next 50 years
       </span>
       <Improvements />

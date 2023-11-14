@@ -6,13 +6,22 @@ import pages from './pages'
 
 import './styles.scss'
 
-const Navigation = () => {
+interface NavigationProps {
+  hideMenu: () => void
+}
+
+const Navigation = (props: NavigationProps) => {
   const { t } = useTranslation()
 
   return (
     <div className='navigation'>
       {pages.map(page => (
-        <Link to={`${page.title}`} key={page.title} className='navigation__page_case'>
+        <Link
+          to={`${page.title}`}
+          key={page.title}
+          className='navigation__page_case'
+          onClick={props.hideMenu}
+        >
           <span className='navigation__page text_title'>
             {t(`header.navigation.${page.title}`)}
           </span>

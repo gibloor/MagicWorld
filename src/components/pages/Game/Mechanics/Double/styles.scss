@@ -1,6 +1,7 @@
 .double {
   width: 450px;
   height: 250px;
+  cursor: grab;
 
   &__picture {
     position: absolute;
@@ -26,5 +27,12 @@
     position: absolute;
     width: 100%;
     height: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .double {
+    width: 100%;
+    height: 50vw;
   }
 }

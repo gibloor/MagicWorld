@@ -40,8 +40,8 @@ const Spells = (props: Props) => {
           </video>
         ))}
         <div className='spells__description'>
-          <span className='spells__description_title'>name spell</span>
-          <span>very much some text, if sy sereasly not very much but it okey. Go end and start flex</span>
+          <span className='spells__description_title'>Spell name</span>
+          <span>A lot of text, and if there is little text, it's fine. Finish and start flexing.</span>
         </div>
       </div>
       <div className='spells__list'>

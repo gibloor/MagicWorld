@@ -1,11 +1,9 @@
 .improvements {
   width: 80%;
-  min-width: 1200px;
   height: 400px;
   margin: 50px 0px;
   padding-bottom: 50px;
   position: relative;
-  // overflow: hidden;
 
   &__steps{
     display: flex;
@@ -24,6 +22,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
 
   &__arrow {
@@ -47,6 +46,7 @@
   }
   &__picture {
     max-height: 100%;
+    cursor: pointer;
   }
 
   &__blackout {
@@ -71,6 +71,7 @@
     position: absolute;
     bottom: -34px;
     z-index: 5;
+    cursor: pointer;
   }
 
   &__line {
@@ -103,5 +104,24 @@
 @keyframes blackoutHide {
   to {
     opacity: 0;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .improvements {
+    &__arrow_block {
+      width: 50px;
+      height: 300px;
+    }
+  
+    &__arrow {
+      width: 40px;
+      padding: 10px;
+    }
+
+    &__picture_block {
+      height: 200px;
+    }
   }
 }

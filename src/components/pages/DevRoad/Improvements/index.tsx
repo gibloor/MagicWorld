@@ -59,6 +59,7 @@ const Improvements = () => {
               {index !== 0 &&
                 <div
                   className='improvements__arrow_block'
+                  onClick={() => changeStep(index)}
                 >
                   <img src={arrow} className='improvements__arrow' />
                 </div>

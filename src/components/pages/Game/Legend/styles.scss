@@ -4,17 +4,16 @@
   &__line {
     width: 100%;
     height: 45vh;
-    min-height: 600px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 5vh 0;
+    margin: 15px 0;
   }
   
   &__line_picture_case {
     height: 100%;
     overflow: hidden;
-    max-width: 50%;
+    width: 50%;
   }
 
 
@@ -28,5 +27,18 @@
 
   &__line_text {
     width: 35%;
+  }
+}
+
+
+@media screen and (max-width: 1100px) {
+  .legend {
+    &__line_picture_case {
+      max-height: 50vw;
+    }
+
+    &__line {
+      height: 50vw;
+    }
   }
 }

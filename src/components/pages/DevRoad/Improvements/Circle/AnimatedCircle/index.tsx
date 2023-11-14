@@ -25,8 +25,8 @@ const animation = (props: AnimationProps) =>
     ${move} ${props.duration}s linear forwards
   `
 const AnimatedCircle = styled.div<AnimationProps>`
-  animation: ${animation}
-  left: ${props => `${props.staticPos}px`}
+  animation: ${animation};
+  left: ${props => `${props.staticPos}px`};
 `
 
 export default AnimatedCircle

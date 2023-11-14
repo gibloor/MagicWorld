@@ -25,8 +25,8 @@ const animation = (props: AnimationProps) =>
     ${transform} ${props.duration}s linear forwards
   `
 const AnimatedLine = styled.div<AnimationProps>`
-  animation: ${animation}
-  margin-left: ${props => `${props.margin}px`}
+  animation: ${animation};
+  margin-left: ${props => `${props.margin}px`};
 `
 
 export default AnimatedLine

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import baseRoad from 'components/assets/magicWays/pedestals/baseRoad.png'
 import fon from 'components/assets/magicWays/pedestals/fon.jpeg'
+import hover from './hover.gif'
 
 import './styles.scss'
 
@@ -21,13 +22,18 @@ const Pedestals = () => {
   return (
     <div className='pedestals'>
       <img src={fon} className='pedestals__fon' />
+
       <div className='pedestals__ways'>
         {roads.map(road => (
-          <Link key={road} className='pedestals__way' to={`${road}`}>
-            <img src={`/MagicWorld/assets/magicWays/${road}/book.png`} className='pedestals__book pedestals__unhover' />
-            <img src={`/MagicWorld/assets/magicWays/${road}/book.png`} className='pedestals__book pedestals__hover' />
-            <img src={`/MagicWorld/assets/magicWays/${road}/road.png`} className='pedestals__road pedestals__unhover' />
-            <img src={`/MagicWorld/assets/magicWays/${road}/road.png`} className='pedestals__road pedestals__hover' />
+          <Link
+            key={road}
+            className='pedestals__way'
+            to='violet'
+            // to={`${road}`}
+          >
+            <img src={`/MagicWorld/assets/magicWays/${road}/book.png`} className='pedestals__book' />
+            <img src={`/MagicWorld/assets/magicWays/${road}/road.png`} className='pedestals__road' />
+            <img src={hover} className='pedestals__hover'/>
           </Link>
         ))}
       </div>

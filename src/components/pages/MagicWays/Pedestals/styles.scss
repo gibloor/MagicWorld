@@ -11,8 +11,9 @@
   &__fon {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 100vw;
     height: 100%;
     z-index: -5;
   }
@@ -26,38 +27,57 @@
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
+    position: relative;
+  }
+
+  &__way:hover &__hover {
+    display: block;
   }
 
   &__book {
     width: 100%;
   }
 
-  &__way:hover > &__unhover {
-    display: none;
-  }
-  &__way:hover > &__hover {
-    display: block;
-
-
-    //before will be add gifss
-    border: 1px solid black;
-  }
 
   &__road {
     width: 100%;
     height: 30vh;
   }
 
-  &__unhover {
-    display: block;
-  }
-
-  &__hover {
-    display: none;
-  }
-
   &__base-roads {
     width: 1000px;
     height: 15vh;
+  }
+  
+  &__hover {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .pedestals {
+
+    &__ways {
+      justify-content: space-around;
+    }
+    &__way {
+      width: 12.5%;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      position: relative;
+    }
+
+    &__road {
+      height: 150px;
+    }
+
+    &__base-roads {
+      width: 95%;
+      height: 10vh;
+    }
   }
 }

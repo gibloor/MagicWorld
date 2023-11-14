@@ -4,7 +4,7 @@
   margin: 5vh 0;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 
   &__window {
     width: calc(99% - 300px);
@@ -71,6 +71,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
 
   &__blanket {
@@ -99,5 +100,50 @@
 @keyframes hideBlanket {
   100% {
     opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .spells {
+    &__window {
+      width: 80%;
+    }
+
+    &__list {
+      width: 15%;
+    }
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .spells {
+    flex-direction: column-reverse;
+    height: 100vw;
+
+    &__window {
+      width: 100%;
+    }
+
+    &__list {
+      flex-direction: row;
+      width: 100%;
+      height: auto;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    &__item {
+      width: auto;
+      height: auto;
+      padding: 15px;
+    }
+
+    &__description {
+      right: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(50%);
+      width: 80%;
+    }
   }
 }

@@ -18,12 +18,12 @@ const MagicLib = () => {
   }
 
   return (
-    <div>
+    <>
       {!moovIn &&
         <Doors getMoovIn={getMoovIn} /> ||
         <Pedestals />
       }
-    </div>
+    </>
   )
 }
 

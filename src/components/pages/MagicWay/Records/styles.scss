@@ -1,4 +1,12 @@
 .records {
   margin: 5vh 0;
   height: calc(90vh - 80px);
+  max-width: 90%;
+}
+
+@media screen and (max-width: 1200px) {
+  .records {
+    width: 90%;
+    height: auto;
+  }
 }
